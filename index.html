@@ -29,6 +29,9 @@
   --line-deep:#04A445;
   --line-ink:#FFFFFF;
 
+  --on-chip:#FFFFFF;
+  --veil-side:linear-gradient(100deg,color-mix(in srgb,var(--paper) 88%,transparent) 0%,color-mix(in srgb,var(--paper) 62%,transparent) 42%,transparent 72%);
+  --veil-top:linear-gradient(180deg,color-mix(in srgb,var(--paper) 46%,transparent) 0%,color-mix(in srgb,var(--paper) 86%,transparent) 40%,var(--paper) 84%);
   --grid:rgba(20,26,32,.045);
   --shadow:0 10px 26px -16px rgba(16,30,38,.42);
   --shadow-lg:0 24px 50px -24px rgba(16,30,38,.45);
@@ -61,6 +64,9 @@
     --blue-soft:#1A2233;
     --coral:#E3918B;
     --coral-soft:#2E1E1C;
+    --on-chip:#0E1418;
+    --veil-side:linear-gradient(100deg,color-mix(in srgb,var(--paper) 93%,transparent) 0%,color-mix(in srgb,var(--paper) 80%,transparent) 46%,color-mix(in srgb,var(--paper) 42%,transparent) 78%);
+    --veil-top:linear-gradient(180deg,color-mix(in srgb,var(--paper) 74%,transparent) 0%,color-mix(in srgb,var(--paper) 93%,transparent) 38%,var(--paper) 78%);
     --grid:rgba(255,255,255,.05);
     --shadow:0 12px 28px -16px rgba(0,0,0,.7);
     --shadow-lg:0 26px 52px -24px rgba(0,0,0,.75);
@@ -74,6 +80,9 @@
   --amber:#E0A94E; --amber-soft:#2C2416;
   --blue:#8AA3E0; --blue-soft:#1A2233;
   --coral:#E3918B; --coral-soft:#2E1E1C;
+  --on-chip:#0E1418;
+  --veil-side:linear-gradient(100deg,color-mix(in srgb,var(--paper) 93%,transparent) 0%,color-mix(in srgb,var(--paper) 80%,transparent) 46%,color-mix(in srgb,var(--paper) 42%,transparent) 78%);
+  --veil-top:linear-gradient(180deg,color-mix(in srgb,var(--paper) 74%,transparent) 0%,color-mix(in srgb,var(--paper) 93%,transparent) 38%,var(--paper) 78%);
   --grid:rgba(255,255,255,.05);
   --shadow:0 12px 28px -16px rgba(0,0,0,.7);
   --shadow-lg:0 26px 52px -24px rgba(0,0,0,.75);
@@ -112,7 +121,7 @@ img,svg{max-width:100%}
 .sec-head{max-width:680px;margin-bottom:40px}
 .sec-head .tag{margin-bottom:16px}
 .sec-head h2{font-size:clamp(24px,3.5vw,34px);font-weight:900;margin-bottom:14px;letter-spacing:-.01em}
-.sec-head p{color:var(--ink-2);font-size:15px;max-width:34em}
+.sec-head p{color:var(--ink-2);font-size:15.5px;max-width:34em}
 
 /* ---- buttons ---- */
 .btn{
@@ -144,7 +153,7 @@ img,svg{max-width:100%}
 
 .micro{
   display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:15px;
-  font-size:12.5px;color:var(--ink-3);
+  font-size:13px;color:var(--ink-2);
 }
 .micro span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .micro svg{flex:none;color:var(--line)}
@@ -169,7 +178,7 @@ img,svg{max-width:100%}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 44%;display:block}
 .hero-media::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(100deg,color-mix(in srgb,var(--paper) 88%,transparent) 0%,color-mix(in srgb,var(--paper) 62%,transparent) 42%,transparent 72%);
+  background:var(--veil-side);
 }
 .hero-inner{position:relative;z-index:2;padding:56px 22px 58px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:34px;align-items:center}
 .hero-card{max-width:600px}
@@ -184,7 +193,7 @@ img,svg{max-width:100%}
   content:"";position:absolute;left:-2px;right:-2px;bottom:.12em;height:.32em;
   background:color-mix(in srgb,var(--sky) 26%,transparent);z-index:-1;border-radius:2px;
 }
-.hero .lead{color:var(--ink-2);font-size:15.5px;line-height:1.95;max-width:31em}
+.hero .lead{color:var(--ink-2);font-size:16px;line-height:1.95;max-width:31em}
 .offer{
   display:flex;align-items:center;gap:13px;margin:24px 0 22px;padding:14px 18px;
   background:var(--paper-3);border:1px dashed var(--rule-2);border-left:3px solid var(--line);
@@ -222,10 +231,10 @@ img,svg{max-width:100%}
 }
 /* mobile hero: keep the primary CTA above the fold */
 @media (max-width:640px){
-  body{font-size:15px}
+  body{font-size:15.5px}
   .hero-media{position:absolute;inset:0}
   .hero-media img{object-position:center 34%}
-  .hero-media::after{background:linear-gradient(180deg,color-mix(in srgb,var(--paper) 46%,transparent) 0%,color-mix(in srgb,var(--paper) 86%,transparent) 40%,var(--paper) 84%)}
+  .hero-media::after{background:var(--veil-top)}
   .hero-inner{padding:22px 20px 30px;gap:0}
   .hero .tag{font-size:10.5px;letter-spacing:.1em}
   .hero .tag::before{width:16px}
@@ -259,19 +268,24 @@ img,svg{max-width:100%}
   font-style:normal;font-size:9.5px;letter-spacing:.12em;color:var(--ink-3);
   border:1px solid var(--rule-2);padding:3px 8px;border-radius:var(--pill);
 }
-.gift h3{font-size:18px;line-height:1.55}
-.gift p{font-size:13.5px;color:var(--ink-2);line-height:1.9}
+.gift h3{font-size:18.5px;line-height:1.55}
+.gift p{font-size:14.5px;color:var(--ink-2);line-height:1.9}
 .gift ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
 .gift li{
-  font-size:12.5px;color:var(--ink-2);display:flex;gap:8px;align-items:flex-start;line-height:1.7;
+  font-size:13.5px;color:var(--ink-2);display:flex;gap:8px;align-items:flex-start;line-height:1.8;
 }
 .gift li svg{flex:none;margin-top:5px;color:var(--sky)}
 .gift .g-foot{
   margin-top:auto;padding-top:14px;border-top:1px dashed var(--rule-2);
-  font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3);
+  font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-3);
   display:flex;justify-content:space-between;align-items:center;gap:8px;
 }
 @media (max-width:900px){.gifts{grid-template-columns:1fr}}
+/* 1カラムに畳まれる幅では、本文の行が長くなりすぎないよう列幅を制限 */
+@media (max-width:900px){
+  .sec .wrap{max-width:700px}
+  .sec{padding:60px 0}
+}
 
 .cta-inline{margin-top:34px;display:flex;flex-direction:column;align-items:center;text-align:center}
 .cta-inline .micro{justify-content:center}
@@ -291,8 +305,8 @@ img,svg{max-width:100%}
   font-family:var(--f-mono);font-size:16px;font-weight:600;
 }
 .step:last-child .s-dot{background:var(--line);border-color:var(--line);color:#fff}
-.step h3{font-size:16px;margin-bottom:7px}
-.step p{font-size:13px;color:var(--ink-2);line-height:1.85}
+.step h3{font-size:17px;margin-bottom:7px}
+.step p{font-size:14px;color:var(--ink-2);line-height:1.85}
 @media (max-width:760px){
   .steps{grid-template-columns:1fr;gap:26px}
   .steps::before{top:0;bottom:0;left:28px;right:auto;width:2px;height:auto;
@@ -308,7 +322,7 @@ img,svg{max-width:100%}
   overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);
 }
 .wall .w-head{
-  padding:15px 20px;color:#fff;display:flex;align-items:center;gap:10px;
+  padding:15px 20px;color:var(--on-chip);display:flex;align-items:center;gap:10px;
   font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
 }
 .wall .w-head svg{flex:none}
@@ -316,15 +330,15 @@ img,svg{max-width:100%}
 .wall.c-blue .w-head{background:var(--blue)}
 .wall.c-coral .w-head{background:var(--coral)}
 .wall .w-body{padding:22px 20px 24px;display:flex;flex-direction:column;gap:11px;flex:1}
-.wall h3{font-size:17.5px;line-height:1.55}
-.wall p{font-size:13.5px;color:var(--ink-2);line-height:1.9}
-.wall ul{margin:2px 0 0;padding-left:1.1em;font-size:13px;color:var(--ink-2);line-height:1.95}
+.wall h3{font-size:18px;line-height:1.55}
+.wall p{font-size:14.5px;color:var(--ink-2);line-height:1.9}
+.wall ul{margin:2px 0 0;padding-left:1.1em;font-size:14px;color:var(--ink-2);line-height:1.95}
 .wall.c-amber li::marker{color:var(--amber)}
 .wall.c-blue li::marker{color:var(--blue)}
 .wall.c-coral li::marker{color:var(--coral)}
 .wall .w-fix{
   margin-top:auto;padding-top:13px;border-top:1px dashed var(--rule-2);
-  font-size:12.5px;color:var(--ink);display:flex;gap:8px;align-items:flex-start;
+  font-size:13.5px;color:var(--ink);display:flex;gap:8px;align-items:flex-start;line-height:1.75;
 }
 .wall .w-fix svg{flex:none;margin-top:4px;color:var(--line)}
 @media (max-width:900px){.walls{grid-template-columns:1fr}}
@@ -336,10 +350,10 @@ img,svg{max-width:100%}
 .feed-item:last-child{border-bottom:none}
 .f-icon{
   width:42px;height:42px;border-radius:var(--r);flex:none;
-  display:flex;align-items:center;justify-content:center;color:#fff;
+  display:flex;align-items:center;justify-content:center;color:var(--on-chip);
 }
-.feed-item h3{font-size:16px;margin-bottom:4px}
-.feed-item p{font-size:13.5px;color:var(--ink-2);line-height:1.85}
+.feed-item h3{font-size:16.5px;margin-bottom:4px}
+.feed-item p{font-size:14.5px;color:var(--ink-2);line-height:1.85}
 .phone{
   background:var(--paper-3);border:1px solid var(--rule-2);border-radius:14px;
   padding:18px;box-shadow:var(--shadow-lg);
@@ -351,15 +365,15 @@ img,svg{max-width:100%}
 }
 .dot-sm{width:9px;height:9px;border-radius:50%;background:var(--line);flex:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--line) 20%,transparent)}
 .phone-bar .time{margin-left:auto;font-family:var(--f-mono);font-size:10px;color:var(--ink-3);font-weight:400;letter-spacing:.08em}
-.bubble{background:var(--sky-soft);border-radius:12px 12px 12px 3px;padding:15px 17px;font-size:13px;line-height:1.9}
-.bubble .b-head{font-family:var(--f-head);font-weight:700;font-size:14px;margin-bottom:9px;color:var(--sky-deep)}
+.bubble{background:var(--sky-soft);border-radius:12px 12px 12px 3px;padding:15px 17px;font-size:13.5px;line-height:1.9}
+.bubble .b-head{font-family:var(--f-head);font-weight:700;font-size:14.5px;margin-bottom:9px;color:var(--sky-deep)}
 .bubble .b-row{display:flex;gap:9px;padding:5px 0}
 .bubble .b-row span:first-child{
   flex:none;width:19px;height:19px;border-radius:50%;background:var(--sky);color:#fff;
   font-family:var(--f-mono);font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:4px;
 }
 .bubble .b-foot{margin-top:9px;padding-top:9px;border-top:1px dashed color-mix(in srgb,var(--sky) 35%,transparent);font-size:11.5px;color:var(--ink-3);font-family:var(--f-mono);letter-spacing:.03em}
-.phone-cap{font-size:11px;color:var(--ink-3);margin-top:12px;text-align:center;font-family:var(--f-mono);letter-spacing:.06em}
+.phone-cap{font-size:11.5px;color:var(--ink-3);margin-top:12px;text-align:center;font-family:var(--f-mono);letter-spacing:.06em}
 @media (max-width:900px){.feed{grid-template-columns:1fr;gap:32px}}
 
 /* ---- trust ---- */
@@ -369,11 +383,11 @@ img,svg{max-width:100%}
   display:flex;flex-direction:column;gap:9px;
 }
 .t-card .t-ico{color:var(--sky)}
-.t-card h3{font-size:15.5px}
-.t-card p{font-size:13px;color:var(--ink-2);line-height:1.85}
+.t-card h3{font-size:16.5px}
+.t-card p{font-size:14px;color:var(--ink-2);line-height:1.85}
 .source{
-  font-size:12.5px;color:var(--ink-3);padding:16px 20px;border:1px dashed var(--rule-2);
-  border-radius:var(--r);line-height:1.9;
+  font-size:13.5px;color:var(--ink-2);padding:18px 20px;border:1px dashed var(--rule-2);
+  border-radius:var(--r);line-height:1.95;max-width:76ch;
 }
 .source a{color:var(--sky-deep);text-decoration:underline;text-underline-offset:3px}
 @media (max-width:900px){.trust{grid-template-columns:1fr}}
@@ -387,7 +401,7 @@ img,svg{max-width:100%}
 .faq details[open]{border-color:var(--sky)}
 .faq summary{
   cursor:pointer;list-style:none;padding:17px 52px 17px 20px;position:relative;
-  font-family:var(--f-head);font-weight:700;font-size:15px;line-height:1.6;
+  font-family:var(--f-head);font-weight:700;font-size:16px;line-height:1.65;
 }
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{
@@ -396,13 +410,13 @@ img,svg{max-width:100%}
   transform:translateY(-70%) rotate(45deg);transition:transform .2s ease;
 }
 .faq details[open] summary::after{transform:translateY(-25%) rotate(225deg)}
-.faq .a{padding:0 20px 19px;font-size:13.5px;color:var(--ink-2);line-height:1.95}
+.faq .a{padding:0 20px 20px;font-size:14.5px;color:var(--ink-2);line-height:1.95}
 .faq summary:focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:var(--r)}
 
 /* ---- final ---- */
 .final{
   position:relative;overflow:hidden;text-align:center;color:#fff;
-  background:linear-gradient(160deg,var(--sky-deep) 0%,#08575D 55%,#06474C 100%);
+  background:linear-gradient(160deg,#0A6970 0%,#08575D 55%,#06474C 100%);
   padding:70px 22px 74px;
 }
 .final::before{
@@ -415,7 +429,7 @@ img,svg{max-width:100%}
 .final .f-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px}
 .final .tag{color:#9BEDF0}
 .final h2{font-size:clamp(25px,3.8vw,36px);color:#fff;font-weight:900;letter-spacing:-.01em}
-.final p{color:rgba(255,255,255,.86);font-size:15px;max-width:38ch}
+.final p{color:rgba(255,255,255,.9);font-size:15.5px;max-width:38ch}
 .final .micro{color:rgba(255,255,255,.8);justify-content:center}
 .final .micro svg{color:#7BE8A8}
 
@@ -424,7 +438,7 @@ footer{padding:40px 0 104px;border-top:1px solid var(--rule);background:var(--pa
 footer .f-in{display:flex;flex-direction:column;gap:10px}
 footer .f-ttl{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;color:var(--ink-3);text-transform:uppercase}
 footer ul{margin:0;padding-left:1.2em;max-width:74ch}
-footer li{font-size:12.5px;color:var(--ink-3);line-height:1.95}
+footer li{font-size:13px;color:var(--ink-3);line-height:1.95}
 footer a{color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
 footer .f-meta{margin-top:6px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;color:var(--ink-3)}
 
@@ -641,7 +655,7 @@ footer .f-meta{margin-top:6px;font-family:var(--f-mono);font-size:10.5px;letter-
       <div class="walls">
         <article class="wall c-amber rv">
           <div class="w-head">
-            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10h8M8 14h5"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10h8M8 14h5"/></svg>
             登録 / REGISTRATION
           </div>
           <div class="w-body">
@@ -660,7 +674,7 @@ footer .f-meta{margin-top:6px;font-family:var(--f-mono);font-size:10.5px;letter-
         </article>
         <article class="wall c-blue rv">
           <div class="w-head">
-            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
             空域 / AIRSPACE
           </div>
           <div class="w-body">
@@ -680,7 +694,7 @@ footer .f-meta{margin-top:6px;font-family:var(--f-mono);font-size:10.5px;letter-
         </article>
         <article class="wall c-coral rv">
           <div class="w-head">
-            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34H9a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87V9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1Z"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34H9a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87V9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1Z"/></svg>
             方法 / APPROVAL
           </div>
           <div class="w-body">
@@ -713,7 +727,7 @@ footer .f-meta{margin-top:6px;font-family:var(--f-mono);font-size:10.5px;letter-
         <div class="feed-list rv">
           <div class="feed-item">
             <div class="f-icon" style="background:var(--sky)">
-              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
             </div>
             <div>
               <h3>毎朝7時のニュースTOP3</h3>
@@ -722,7 +736,7 @@ footer .f-meta{margin-top:6px;font-family:var(--f-mono);font-size:10.5px;letter-
           </div>
           <div class="feed-item">
             <div class="f-icon" style="background:var(--amber)">
-              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v14"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H19"/></svg>
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v14"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H19"/></svg>
             </div>
             <div>
               <h3>週1回のつまずき解説</h3>
@@ -731,7 +745,7 @@ footer .f-meta{margin-top:6px;font-family:var(--f-mono);font-size:10.5px;letter-
           </div>
           <div class="feed-item">
             <div class="f-icon" style="background:var(--coral)">
-              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
             </div>
             <div>
               <h3>制度が変わったときのお知らせ</h3>
