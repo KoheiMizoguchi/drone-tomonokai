@@ -14,7 +14,7 @@ line_url: https://lin.ee/XqapxDi
 
 # 楽天ROOM：自分のROOMページのURL（例：https://room.rakuten.co.jp/room_xxxxxxxxxx/items）
 # 空のままだと、ROOMへの誘導ボックスとヘッダーの「おすすめ」リンクは表示されません
-rakuten_room_url: ""
+rakuten_room_url: "https://room.rakuten.co.jp/room_584cfed81d/items"
 
 # コラム記事のURL： /columns/2026/09/registration-basics/ の形になります
 permalink: /columns/:year/:month/:title/
