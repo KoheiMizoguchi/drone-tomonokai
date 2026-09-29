@@ -463,21 +463,61 @@ layout: null
     </div>
   </section>
 
-  <!-- ============ 2. COLUMNS：最新コラム3件（①情報／記事0件なら非表示） ============ -->
-  {% if site.posts.size > 0 %}
-  <section class="sec alt" id="columns">
+  <!-- ============ 2. FEED：LINEで届くもの（②LINE） ============ -->
+  <section class="sec alt">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="tag">コラム</span>
-        <h2>もう一歩、<wbr>詳しく<wbr>知りたい<wbr>ときは。</h2>
-        <p>制度の<wbr>背景や<wbr>機体選び、<wbr>練習の<wbr>コツまで。<wbr>ドローン友の会が<wbr>まとめた<wbr>読みものです。</p>
+        <span class="tag">LINEで<wbr>届くもの</span>
+        <h2><span class="ln">読むのに<wbr>1分。</span><span class="ln">毎日、<wbr>少しずつ<wbr>詳しくなる。</span></h2>
+        <p>長い<wbr>記事は<wbr>送りません。<wbr>通勤前に<wbr>読み<wbr>切れる<wbr>分量だけです。</p>
       </div>
-      {% assign latest = site.posts | slice: 0, 3 %}
-      {% include column-cards.html posts=latest reveal=true %}
-      <div class="col-more rv"><a class="more-link" href="{{ '/columns/' | relative_url }}">コラムを<wbr>すべて<wbr>見る<span aria-hidden="true"> →</span></a></div>
+      <div class="feed">
+        <div class="feed-list rv">
+          <div class="feed-item">
+            <div class="f-icon" style="background:var(--sky)">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+            <div>
+              <h3>毎朝7時の<wbr>ニュースTOP3</h3>
+              <p>法規制・ビジネス・技術から<wbr>1本ずつ。<wbr>専門用語には<wbr>毎回かんたんな<wbr>解説つき。</p>
+            </div>
+          </div>
+          <div class="feed-item">
+            <div class="f-icon" style="background:var(--amber)">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v14"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H19"/></svg>
+            </div>
+            <div>
+              <h3>週1回のつまずき<wbr>解説</h3>
+              <p>登録の<wbr>手順、<wbr>飛行日誌の<wbr>書き方など、<wbr>手が<wbr>止まる<wbr>場所を<wbr>1テーマずつ<wbr>解説します。</p>
+            </div>
+          </div>
+          <div class="feed-item">
+            <div class="f-icon" style="background:var(--coral)">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+            </div>
+            <div>
+              <h3>制度が<wbr>変わったときの<wbr>お知らせ</h3>
+              <p>登録や<wbr>資格の<wbr>制度はよく<wbr>変わります。<wbr>「知らなかった」で<wbr>違反しないよう、<wbr>先回りして<wbr>お伝えします。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rv">
+          <div class="phone">
+            <div class="phone-bar"><span class="dot-sm"></span>ドローン友の会<span class="time">7:00 AM</span></div>
+            <div class="bubble">
+              <div class="b-head">今日の<wbr>ドローンニュース TOP3</div>
+              <div class="b-row"><span>1</span><span>法規制 ─ 飛行許可の<wbr>運用変更</span></div>
+              <div class="b-row"><span>2</span><span>ビジネス ─ 物流実証が<wbr>開始</span></div>
+              <div class="b-row"><span>3</span><span>技術革新 ─ 回避センサー進化</span></div>
+              <div class="b-foot">今日の<wbr>用語：<wbr>レベル4飛行</div>
+            </div>
+          </div>
+          <p class="phone-cap">実際に<wbr>届く<wbr>メッセージの<wbr>イメージ</p>
+        </div>
+      </div>
     </div>
   </section>
-  {% endif %}
 
   <!-- ============ 3. LINE：特典PDF3点＋受け取りの流れ（②LINE） ============ -->
   <section class="sec" id="line">
@@ -554,61 +594,21 @@ layout: null
     </div>
   </section>
 
-  <!-- ============ 4. FEED：LINEで届くもの（②LINE） ============ -->
-  <section class="sec alt">
+  <!-- ============ 4. COLUMNS：最新コラム3件（①情報／記事0件なら非表示） ============ -->
+  {% if site.posts.size > 0 %}
+  <section class="sec alt" id="columns">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="tag">LINEで<wbr>届くもの</span>
-        <h2><span class="ln">読むのに<wbr>1分。</span><span class="ln">毎日、<wbr>少しずつ<wbr>詳しくなる。</span></h2>
-        <p>長い<wbr>記事は<wbr>送りません。<wbr>通勤前に<wbr>読み<wbr>切れる<wbr>分量だけです。</p>
+        <span class="tag">コラム</span>
+        <h2>もう一歩、<wbr>詳しく<wbr>知りたい<wbr>ときは。</h2>
+        <p>制度の<wbr>背景や<wbr>機体選び、<wbr>練習の<wbr>コツまで。<wbr>ドローン友の会が<wbr>まとめた<wbr>読みものです。</p>
       </div>
-      <div class="feed">
-        <div class="feed-list rv">
-          <div class="feed-item">
-            <div class="f-icon" style="background:var(--sky)">
-              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            </div>
-            <div>
-              <h3>毎朝7時の<wbr>ニュースTOP3</h3>
-              <p>法規制・ビジネス・技術から<wbr>1本ずつ。<wbr>専門用語には<wbr>毎回かんたんな<wbr>解説つき。</p>
-            </div>
-          </div>
-          <div class="feed-item">
-            <div class="f-icon" style="background:var(--amber)">
-              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v14"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H19"/></svg>
-            </div>
-            <div>
-              <h3>週1回のつまずき<wbr>解説</h3>
-              <p>登録の<wbr>手順、<wbr>飛行日誌の<wbr>書き方など、<wbr>手が<wbr>止まる<wbr>場所を<wbr>1テーマずつ<wbr>解説します。</p>
-            </div>
-          </div>
-          <div class="feed-item">
-            <div class="f-icon" style="background:var(--coral)">
-              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
-            </div>
-            <div>
-              <h3>制度が<wbr>変わったときの<wbr>お知らせ</h3>
-              <p>登録や<wbr>資格の<wbr>制度はよく<wbr>変わります。<wbr>「知らなかった」で<wbr>違反しないよう、<wbr>先回りして<wbr>お伝えします。</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="rv">
-          <div class="phone">
-            <div class="phone-bar"><span class="dot-sm"></span>ドローン友の会<span class="time">7:00 AM</span></div>
-            <div class="bubble">
-              <div class="b-head">今日の<wbr>ドローンニュース TOP3</div>
-              <div class="b-row"><span>1</span><span>法規制 ─ 飛行許可の<wbr>運用変更</span></div>
-              <div class="b-row"><span>2</span><span>ビジネス ─ 物流実証が<wbr>開始</span></div>
-              <div class="b-row"><span>3</span><span>技術革新 ─ 回避センサー進化</span></div>
-              <div class="b-foot">今日の<wbr>用語：<wbr>レベル4飛行</div>
-            </div>
-          </div>
-          <p class="phone-cap">実際に<wbr>届く<wbr>メッセージの<wbr>イメージ</p>
-        </div>
-      </div>
+      {% assign latest = site.posts | slice: 0, 3 %}
+      {% include column-cards.html posts=latest reveal=true %}
+      <div class="col-more rv"><a class="more-link" href="{{ '/columns/' | relative_url }}">コラムを<wbr>すべて<wbr>見る<span aria-hidden="true"> →</span></a></div>
     </div>
   </section>
+  {% endif %}
 
   <!-- ============ 5. ITEMS：おすすめアイテム（③アフィリエイト） ============ -->
   {% include home-items.html %}
