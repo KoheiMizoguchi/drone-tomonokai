@@ -14,6 +14,7 @@ category: 制度・ルール   # 例：制度・ルール ／ 機体選び ／ �
 # image: /assets/img/columns/first-flight.jpg   # アイキャッチ画像（横長 16:9 推奨）
 # image_alt: 画像の説明
 # last_modified_at: 2026-10-10                 # 内容を更新した日
+# room_items: [landing-pad, spare-battery]     # 記事の最後に「紹介したアイテム」として並べる楽天ROOM商品（_data/room_items.yml の id）
 ---
 
 導入の文章。読者がこの記事を読むと何がわかるかを、2〜3文で。
@@ -30,6 +31,10 @@ category: 制度・ルール   # 例：制度・ルール ／ 機体選び ／ �
 > 補足や注意は、行頭に「>」をつけると囲みになります。
 
 リンクは [表示する文字](https://www.mlit.go.jp/koku/drone/) のように書きます。
+
+楽天ROOMの商品カードを本文の途中に入れるときは、次の1行を書きます（id は _data/room_items.yml のもの）。
+
+{% include room-item.html id="landing-pad" %}
 
 画像は `assets/img/columns/` にアップロードして、次のように書きます。
 

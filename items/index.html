@@ -1,0 +1,35 @@
+---
+layout: base
+title: おすすめアイテム
+description: ドローン友の会がおすすめする、ドローン初心者に役立つ機体・バッテリー・練習用品。楽天ROOMで紹介しています。
+---
+<section class="sec col-index">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">RECOMMENDED</span>
+      <h1 class="col-index-h">おすすめアイテム</h1>
+      <p>練習や<wbr>持ち運びで<wbr>「あってよかった」<wbr>道具を、<wbr>理由と<wbr>いっしょに<wbr>紹介します。</p>
+    </div>
+
+    <p class="pr-note">
+      <span class="pr-label">PR</span>
+      このページには<wbr>楽天ROOMの<wbr>リンクが<wbr>含まれます。<wbr>リンクから<wbr>商品が<wbr>購入されると、<wbr>運営者に<wbr>報酬が<wbr>発生することが<wbr>あります。<wbr>価格や<wbr>在庫は<wbr>リンク先で<wbr>ご確認ください。
+    </p>
+
+    {%- if site.data.room_items and site.data.room_items.size > 0 %}
+    {%- assign groups = site.data.room_items | group_by: "category" %}
+    {%- for g in groups %}
+    <h2 class="room-group-h">{% if g.name != "" %}{{ g.name }}{% else %}そのほか{% endif %}</h2>
+    <div class="room-grid">
+      {%- for it in g.items %}
+      {% include room-item.html id=it.id %}
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+    {%- else %}
+    <p class="col-empty">アイテムは準備中です。</p>
+    {%- endif %}
+
+    {% include room-banner.html %}
+  </div>
+</section>

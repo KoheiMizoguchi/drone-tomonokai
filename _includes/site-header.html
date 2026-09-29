@@ -3,6 +3,9 @@
 {%- endcomment -%}
 {%- assign in_columns = false -%}
 {%- if page.layout == "column" or page.url contains "/columns/" -%}{%- assign in_columns = true -%}{%- endif -%}
+{%- assign has_room = false -%}
+{%- if site.rakuten_room_url and site.rakuten_room_url != "" -%}{%- assign has_room = true -%}{%- endif -%}
+{%- if site.data.room_items and site.data.room_items.size > 0 -%}{%- assign has_room = true -%}{%- endif -%}
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="{{ '/' | relative_url }}">
@@ -17,6 +20,9 @@
     </a>
     <div class="topbar-r">
       <a class="nav-link" href="{{ '/columns/' | relative_url }}"{% if in_columns %} aria-current="page"{% endif %}>コラム</a>
+      {%- if has_room %}
+      <a class="nav-link" href="{{ '/items/' | relative_url }}"{% if page.url contains "/items/" %} aria-current="page"{% endif %}>おすすめ</a>
+      {%- endif %}
       <a class="btn sm" href="{{ site.line_url }}" target="_blank" rel="noopener" data-cta="{{ include.cta | default: 'header' }}">
         <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6c-5.2 0-9.4 3.4-9.4 7.6 0 3.8 3.3 6.9 7.8 7.5.3.06.7.2.81.46.1.24.06.6.03.85l-.13.79c-.04.23-.19.9.79.49s5.27-3.1 7.19-5.32c1.33-1.45 1.96-2.93 1.96-4.77 0-4.2-4.23-7.6-9.45-7.6Z"/></svg>
         特典を<wbr>受け<wbr>取る

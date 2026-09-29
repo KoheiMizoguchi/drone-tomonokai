@@ -1,0 +1,80 @@
+/* 楽天ROOM：商品カード／ROOM誘導ボックス／PR表記。緑（--line）はLINE専用のため、ここでは --coral を使用 */
+
+.pr-label{
+  display:inline-flex;align-items:center;justify-content:center;flex:none;
+  font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.12em;line-height:1;
+  color:var(--ink-3);border:1px solid var(--rule-2);background:var(--paper-3);
+  padding:4px 7px;border-radius:3px;
+}
+.pr-note{
+  display:flex;gap:10px;align-items:flex-start;margin:-10px 0 30px;
+  font-size:13px;color:var(--ink-2);line-height:1.85;max-width:62em;
+}
+.pr-note .pr-label{margin-top:3px}
+
+/* ---- item card ---- */
+.room-item{
+  position:relative;display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start;
+  background:var(--paper-3);border:1px solid var(--rule);border-radius:var(--r);
+  padding:18px;box-shadow:var(--shadow);
+}
+.room-item .pr-label{position:absolute;top:10px;right:10px}
+.room-img{
+  display:flex;align-items:center;justify-content:center;aspect-ratio:1;overflow:hidden;
+  background:#fff;border:1px solid var(--rule);border-radius:var(--r);
+}
+.room-img img{width:100%;height:100%;object-fit:contain;display:block}
+.room-noimg{font-family:var(--f-mono);font-size:28px;font-weight:600;color:var(--coral);opacity:.5}
+.room-body{display:flex;flex-direction:column;gap:7px;min-width:0;padding-right:28px}
+.room-cat{font-size:11.5px;font-weight:700;color:var(--coral);letter-spacing:.04em}
+.room-name{
+  font-family:var(--f-head);font-weight:700;font-size:16.5px;line-height:1.6;
+  color:var(--ink);text-decoration:none;word-break:normal;word-break:auto-phrase;
+}
+.room-name:hover{color:var(--coral);text-decoration:underline;text-underline-offset:3px}
+.room-comment{font-size:14px;color:var(--ink-2);line-height:1.85;word-break:normal;word-break:auto-phrase}
+.room-btn{
+  align-self:flex-start;display:inline-flex;align-items:center;gap:4px;margin-top:4px;
+  font-family:var(--f-head);font-weight:700;font-size:14px;text-decoration:none;
+  color:#fff;background:var(--coral);padding:9px 20px;border-radius:var(--pill);
+  transition:transform .15s ease,filter .15s ease;
+}
+.room-btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.room-btn:focus-visible,.room-name:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .room-btn{color:var(--on-chip)}}
+:root[data-theme="dark"] .room-btn{color:var(--on-chip)}
+@media (max-width:520px){
+  .room-item{grid-template-columns:88px 1fr;gap:14px;padding:15px}
+  .room-name{font-size:15.5px}
+}
+
+/* 記事本文の中に置いたとき */
+.prose .room-item{margin-top:1.6em;margin-bottom:1.6em}
+.prose .room-item a{text-decoration:none}
+.prose .room-item .room-name{color:var(--ink)}
+.prose .room-item .room-btn{color:#fff}
+
+/* ---- items page ---- */
+.room-group-h{
+  font-size:clamp(19px,2.6vw,22px);font-weight:900;margin:40px 0 16px;
+  padding-left:12px;border-left:3px solid var(--coral);
+}
+.room-group-h:first-of-type{margin-top:0}
+.room-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:900px){.room-grid{grid-template-columns:1fr}}
+.col-related{margin-top:44px}
+.col-related-h{font-size:18px;font-weight:900;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.col-related .room-item+.room-item{margin-top:14px}
+
+/* ---- ROOM banner ---- */
+.room-banner{
+  position:relative;margin-top:40px;padding:24px 26px;
+  display:flex;align-items:center;justify-content:space-between;gap:18px 26px;flex-wrap:wrap;
+  background:var(--coral-soft);border:1px solid color-mix(in srgb,var(--coral) 30%,transparent);
+  border-radius:var(--r);
+}
+.room-banner .pr-label{position:absolute;top:10px;right:10px}
+.room-banner-txt{flex:1 1 320px;padding-right:30px}
+.room-banner-h{font-family:var(--f-head);font-weight:900;font-size:18px;line-height:1.6}
+.room-banner-sub{font-size:13.5px;color:var(--ink-2);margin-top:4px}
+.room-banner .room-btn{margin-top:0;padding:12px 24px;font-size:15px}

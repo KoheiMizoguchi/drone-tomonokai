@@ -33,7 +33,17 @@ layout: base
       この記事は{{ page.date | date: "%Y年%-m月%-d日" }}時点の情報です。<wbr>制度は改正されることがあるため、<wbr>飛行前には<a href="https://www.mlit.go.jp/koku/drone/" target="_blank" rel="noopener">国土交通省の<wbr>最新情報</a>を<wbr>ご確認ください。
     </p>
 
+    {%- if page.room_items and page.room_items.size > 0 %}
+    <section class="col-related">
+      <h2 class="col-related-h"><span class="pr-label">PR</span>この記事で<wbr>紹介した<wbr>アイテム</h2>
+      {%- for id in page.room_items %}
+      {% include room-item.html id=id %}
+      {%- endfor %}
+    </section>
+    {%- endif %}
+
     {% include line-cta.html cta="column" %}
+    {% include room-banner.html %}
 
     <nav class="pager" aria-label="前後の記事">
       {%- if page.previous %}

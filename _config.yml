@@ -12,6 +12,10 @@ baseurl: /drone-tomonokai
 # LINE公式アカウントの友だち追加リンク（コラムページのCTAで使用）
 line_url: https://lin.ee/XqapxDi
 
+# 楽天ROOM：自分のROOMページのURL（例：https://room.rakuten.co.jp/room_xxxxxxxxxx/items）
+# 空のままだと、ROOMへの誘導ボックスとヘッダーの「おすすめ」リンクは表示されません
+rakuten_room_url: ""
+
 # コラム記事のURL： /columns/2026/09/registration-basics/ の形になります
 permalink: /columns/:year/:month/:title/
 
