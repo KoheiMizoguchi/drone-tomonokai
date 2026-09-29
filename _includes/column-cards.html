@@ -8,14 +8,13 @@
     <span class="col-thumb"><img src="{{ post.image | relative_url }}" alt="" loading="lazy"></span>
     {%- endif %}
     <span class="col-meta">
-      {%- if post.category %}<span class="col-cat">{{ post.category }}</span>{% endif %}
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+      {%- if post.category %}<span class="col-cat">{{ post.category }}</span>{% endif %}
     </span>
     <span class="col-title">{{ post.title }}</span>
     {%- if post.description %}
     <span class="col-desc">{{ post.description }}</span>
     {%- endif %}
-    <span class="col-go">読む<span aria-hidden="true"> →</span></span>
   </a>
   {%- endfor %}
 </div>
