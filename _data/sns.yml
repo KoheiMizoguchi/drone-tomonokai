@@ -1,24 +1,34 @@
 # ▼ SNSアカウントの一覧 ▼
-# ここに書いたSNSが、トップページの「SNSでも発信中」セクション・フッター・各コラムの最後に表示されます。
-# 1つも書かれていないときは、SNSの表示はすべて非表示になります。
+# URLを入れたSNSが、トップページの「SNSでも発信中」・フッター・各コラムの最後に表示されます。
+# url が空のSNSは表示されません（LINEだけは空でも _config.yml の line_url が使われます）。
+# LINE以外のSNSが1つもURL入りでないうちは、SNS欄そのものが表示されません。
 #
-# 【追加のしかた】下の例の「#」を外して書き換えてください（上から順に表示されます）。
-#   name   … SNSの名前。X / Instagram / YouTube / TikTok / Threads / Facebook / note はアイコンが自動で付きます
-#   url    … プロフィールページのURL
-#   handle … アカウント名（例：@drone_tomonokai）
+#   name   … SNSの名前（アイコンが自動で付きます。表示順はこのファイルの順）
+#   url    … プロフィールページのURL（例：https://x.com/アカウント名）
+#   handle … アカウント名（例："@drone_tomonokai"。@ で始めるときは " " で囲む）
 #   text   … そのSNSで何を発信しているか（1文）
-#
-# - name: Instagram
-#   url: https://www.instagram.com/xxxxx/
-#   handle: "@xxxxx"
-#   text: 空撮写真と、撮影地のルールをあわせて紹介しています。
-#
-# - name: YouTube
-#   url: https://www.youtube.com/@xxxxx
-#   handle: "@xxxxx"
-#   text: 初フライトの手順や、機体レビューを動画で解説しています。
-#
-# - name: X
-#   url: https://x.com/xxxxx
-#   handle: "@xxxxx"
-#   text: 制度改正などのニュースを、いちばん早くお知らせします。
+
+- name: LINE
+  url: ""
+  handle: 公式LINE
+  text: 毎朝7時のニュースTOP3と、週1回のつまずき解説。友だち追加で特典PDF3点。
+
+- name: X
+  url: ""
+  handle: ""
+  text: 制度改正や規制のニュースを、いちばん早くお知らせします。
+
+- name: Instagram
+  url: ""
+  handle: ""
+  text: 空撮写真と短い動画。撮影地のルールもあわせて紹介します。
+
+- name: YouTube
+  url: ""
+  handle: ""
+  text: 初フライトの手順や機体の操作を、動画で解説します。
+
+- name: note
+  url: ""
+  handle: ""
+  text: 資格試験の体験記など、じっくり読める長めの記事。

@@ -173,8 +173,9 @@ layout: null
 <body>
 
 {% include site-header.html cta="header" %}
+{%- include sns-count.html -%}
 {%- assign has_sns = false -%}
-{%- if site.data.sns and site.data.sns.size > 0 -%}{%- assign has_sns = true -%}{%- endif -%}
+{%- if sns_count > 0 -%}{%- assign has_sns = true -%}{%- endif -%}
 <main>
   <!-- ============ 0. HERO：LINE登録（主CTA）＋情報への副導線 ============ -->
   <section class="hero">

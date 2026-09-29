@@ -1,22 +1,27 @@
-{%- comment -%} LPの「SNSでも発信中」セクション（④SNS）。_data/sns.yml が空なら何も出さない {%- endcomment -%}
-{%- if site.data.sns and site.data.sns.size > 0 %}
+{%- comment -%} LPの「SNSでも発信中」セクション（④SNS）。_data/sns.yml にURL入りのSNSがなければ何も出さない {%- endcomment -%}
+{%- include sns-count.html -%}
+{%- if sns_count > 0 %}
   <section class="sec" id="sns">
     <div class="wrap">
       <div class="sec-head">
         <span class="tag">Follow us</span>
         <h2>SNSでも、<wbr>発信しています。</h2>
-        <p>映像で<wbr>見たい<wbr>ときや、<wbr>ニュースを<wbr>すぐ<wbr>知りたい<wbr>ときは<wbr>こちらから。</p>
+        <p>毎朝の<wbr>情報は<wbr>LINE、<wbr>ニュースの<wbr>速報は<wbr>X、<wbr>映像は<wbr>InstagramとYouTube、<wbr>じっくり<wbr>読む<wbr>記事は<wbr>note。<wbr>見たい<wbr>形で<wbr>フォローしてください。</p>
       </div>
       <div class="sns-grid">
         {%- for a in site.data.sns %}
-        <a class="sns-card" href="{{ a.url }}" target="_blank" rel="noopener me" data-sns="{{ a.name | downcase }}">
-          <span class="sns-ico">{% include sns-icon.html name=a.name size=22 %}</span>
+        {%- assign u = a.url -%}
+        {%- if a.name == "LINE" and u == blank -%}{%- assign u = site.line_url -%}{%- endif -%}
+        {%- if u != blank %}
+        <a class="sns-card" href="{{ u }}" target="_blank" rel="noopener me" data-sns="{{ a.name | downcase }}"{% if a.name == "LINE" %} data-cta="sns"{% endif %}>
+          <span class="sns-ico{% if a.name == 'LINE' %} is-line{% endif %}">{% include sns-icon.html name=a.name size=22 %}</span>
           <span class="sns-txt">
-            <span class="sns-name">{{ a.name }}{% if a.handle %}<small>{{ a.handle }}</small>{% endif %}</span>
-            {%- if a.text %}<span class="sns-desc">{{ a.text }}</span>{% endif %}
+            <span class="sns-name">{{ a.name }}{% if a.handle != blank %}<small>{{ a.handle }}</small>{% endif %}</span>
+            {%- if a.text != blank %}<span class="sns-desc">{{ a.text }}</span>{% endif %}
           </span>
-          <span class="sns-go">フォローする</span>
+          <span class="sns-go">{% if a.name == "LINE" %}友だち追加{% else %}フォローする{% endif %}</span>
         </a>
+        {%- endif %}
         {%- endfor %}
       </div>
     </div>
