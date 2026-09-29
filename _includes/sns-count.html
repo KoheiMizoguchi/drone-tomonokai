@@ -1,0 +1,10 @@
+{%- comment -%}
+  SNSの表示判定。URLが入っている「LINE以外」のSNSの数を sns_count に入れる。
+  LINEはサイト全体の主な導線なので、LINEだけのときはSNS欄を出さない。
+{%- endcomment -%}
+{%- assign sns_count = 0 -%}
+{%- if site.data.sns -%}
+{%- for a in site.data.sns -%}
+{%- if a.name != "LINE" and a.url != blank -%}{%- assign sns_count = sns_count | plus: 1 -%}{%- endif -%}
+{%- endfor -%}
+{%- endif -%}

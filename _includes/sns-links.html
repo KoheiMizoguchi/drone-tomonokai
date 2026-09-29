@@ -1,10 +1,15 @@
 {%- comment -%} SNSアイコンの横並び（フッター・コラム記事の最後で使用）。include.label … 左に出す見出し {%- endcomment -%}
-{%- if site.data.sns and site.data.sns.size > 0 %}
+{%- include sns-count.html -%}
+{%- if sns_count > 0 %}
 <div class="sns-links{% if include.boxed %} boxed{% endif %}">
   {%- if include.label %}<span class="sns-links-h">{{ include.label }}</span>{% endif %}
   <span class="sns-links-row">
     {%- for a in site.data.sns %}
-    <a href="{{ a.url }}" target="_blank" rel="noopener me" aria-label="{{ a.name }}" title="{{ a.name }}" data-sns="{{ a.name | downcase }}">{% include sns-icon.html name=a.name size=19 %}</a>
+    {%- assign u = a.url -%}
+    {%- if a.name == "LINE" and u == blank -%}{%- assign u = site.line_url -%}{%- endif -%}
+    {%- if u != blank %}
+    <a href="{{ u }}" target="_blank" rel="noopener me" aria-label="{{ a.name }}" title="{{ a.name }}" data-sns="{{ a.name | downcase }}">{% include sns-icon.html name=a.name size=19 %}</a>
+    {%- endif %}
     {%- endfor %}
   </span>
 </div>
