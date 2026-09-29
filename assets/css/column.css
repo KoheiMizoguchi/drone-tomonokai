@@ -1,5 +1,8 @@
 /* コラム機能：カード一覧（LP・一覧ページ共通）／記事本文／LINE誘導ボックス。配色は base.css のトークンを使用 */
 
+/* Markdown由来の文章には <wbr> が入らないため、keep-all（base.css）を解除して自然に折り返す */
+.col-title,.col-desc,.col-lead,.col-head h1,.prose{word-break:normal;word-break:auto-phrase}
+
 /* ---- cards ---- */
 .col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .col-card{
@@ -91,7 +94,7 @@
 .prose code{font-family:var(--f-mono);font-size:.88em;background:var(--paper-2);border:1px solid var(--rule);padding:1px 6px;border-radius:3px}
 .prose pre{overflow-x:auto;background:var(--paper-2);border:1px solid var(--rule);border-radius:var(--r);padding:14px 16px;font-size:14px;line-height:1.7}
 .prose pre code{background:none;border:none;padding:0}
-.prose table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.75;display:block;overflow-x:auto}
+.prose table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.75}
 .prose th,.prose td{border:1px solid var(--rule-2);padding:9px 12px;text-align:left;vertical-align:top}
 .prose th{background:var(--paper-2);font-family:var(--f-head);font-weight:700;white-space:nowrap}
 
