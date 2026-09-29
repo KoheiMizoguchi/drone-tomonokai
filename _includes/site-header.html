@@ -1,0 +1,26 @@
+{%- comment -%}
+  共通ヘッダー。include.cta … LINEボタンの data-cta 計測ID（LP: header / コラム: column-header）
+{%- endcomment -%}
+{%- assign in_columns = false -%}
+{%- if page.layout == "column" or page.url contains "/columns/" -%}{%- assign in_columns = true -%}{%- endif -%}
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <svg class="brand-mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="9" cy="9" r="4.2" fill="none" stroke="var(--sky)" stroke-width="2.4"/>
+        <circle cx="23" cy="9" r="4.2" fill="none" stroke="var(--amber)" stroke-width="2.4"/>
+        <circle cx="9" cy="23" r="4.2" fill="none" stroke="var(--coral)" stroke-width="2.4"/>
+        <circle cx="23" cy="23" r="4.2" fill="none" stroke="var(--blue)" stroke-width="2.4"/>
+        <rect x="12.5" y="12.5" width="7" height="7" rx="2" fill="var(--ink)"/>
+      </svg>
+      <span>ドローン友の会<small>DRONE STARTER GUIDE</small></span>
+    </a>
+    <div class="topbar-r">
+      <a class="nav-link" href="{{ '/columns/' | relative_url }}"{% if in_columns %} aria-current="page"{% endif %}>コラム</a>
+      <a class="btn sm" href="{{ site.line_url }}" target="_blank" rel="noopener" data-cta="{{ include.cta | default: 'header' }}">
+        <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6c-5.2 0-9.4 3.4-9.4 7.6 0 3.8 3.3 6.9 7.8 7.5.3.06.7.2.81.46.1.24.06.6.03.85l-.13.79c-.04.23-.19.9.79.49s5.27-3.1 7.19-5.32c1.33-1.45 1.96-2.93 1.96-4.77 0-4.2-4.23-7.6-9.45-7.6Z"/></svg>
+        特典を<wbr>受け<wbr>取る
+      </a>
+    </div>
+  </div>
+</header>
