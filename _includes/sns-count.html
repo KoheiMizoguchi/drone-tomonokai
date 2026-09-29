@@ -5,6 +5,6 @@
 {%- assign sns_count = 0 -%}
 {%- if site.data.sns -%}
 {%- for a in site.data.sns -%}
-{%- if a.name != "LINE" and a.url != blank -%}{%- assign sns_count = sns_count | plus: 1 -%}{%- endif -%}
+{%- assign ulen = a.url | size -%}{%- if a.name != "LINE" and ulen > 0 -%}{%- assign sns_count = sns_count | plus: 1 -%}{%- endif -%}
 {%- endfor -%}
 {%- endif -%}
