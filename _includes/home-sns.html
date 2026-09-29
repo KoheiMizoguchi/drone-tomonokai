@@ -2,20 +2,20 @@
 {%- if site.data.sns and site.data.sns.size > 0 %}
   <section class="sec" id="sns">
     <div class="wrap">
-      <div class="sec-head rv">
-        <span class="tag">SNS</span>
+      <div class="sec-head">
+        <span class="tag">Follow us</span>
         <h2>SNSでも、<wbr>発信しています。</h2>
         <p>映像で<wbr>見たい<wbr>ときや、<wbr>ニュースを<wbr>すぐ<wbr>知りたい<wbr>ときは<wbr>こちらから。</p>
       </div>
       <div class="sns-grid">
         {%- for a in site.data.sns %}
-        <a class="sns-card rv" href="{{ a.url }}" target="_blank" rel="noopener me" data-sns="{{ a.name | downcase }}">
+        <a class="sns-card" href="{{ a.url }}" target="_blank" rel="noopener me" data-sns="{{ a.name | downcase }}">
           <span class="sns-ico">{% include sns-icon.html name=a.name size=22 %}</span>
           <span class="sns-txt">
             <span class="sns-name">{{ a.name }}{% if a.handle %}<small>{{ a.handle }}</small>{% endif %}</span>
             {%- if a.text %}<span class="sns-desc">{{ a.text }}</span>{% endif %}
           </span>
-          <span class="sns-go">フォロー<span aria-hidden="true"> →</span></span>
+          <span class="sns-go">フォローする</span>
         </a>
         {%- endfor %}
       </div>

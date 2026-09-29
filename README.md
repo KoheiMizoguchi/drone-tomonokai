@@ -126,13 +126,13 @@ GitHub のサイト上だけで投稿できます。
 
 ## 編集するときのメモ
 
-- **LINEの追加リンク**は `https://lin.ee/XqapxDi`。変更する場合は `_config.yml` の `line_url`（ヘッダーとコラム側）と、`index.html` 内の `href`（ヒーロー／特典後／最終CTA／追従バーの4箇所）を置換。
+- **LINEの追加リンク**は `https://lin.ee/XqapxDi`。変更する場合は `_config.yml` の `line_url` を書き換えるだけで、全ページのLINEボタンに反映されます。
 - **ヘッダー・フッター**は `_includes/site-header.html` / `site-footer.html` を編集すると、LPとコラムの両方に反映されます。
 - **CTAの計測**用に各ボタンへ `data-cta="hero|header|gifts|final|dock|column-header|column|column-index"` を付与しています。アクセス解析を入れる際の識別子に使えます。
 - **改行位置を固定したい文章**は `<span class="ln">…</span>`（`display:block`）で行を分けています。
-- **配色**は `assets/css/base.css` の `:root` のCSS変数で一括管理。ライト／ダーク両対応。緑（`--line`）はCTA専用色なので、他の要素には使わないでください。
-- **フォント**は Google Fonts（Zen Kaku Gothic New / Noto Sans JP / IBM Plex Mono）を読み込みます。
-- スクロール時のフェードインはJS無効時・失敗時でも本文が表示されるようフェイルセーフ付き。
+- **デザイン**：白地・黒の太字ゴシック（Zen Kaku Gothic New）・広い余白。英字の小見出しと数字は Outfit。配色は `assets/css/base.css` の `:root` で一括管理。オレンジ（`--signal`）は数字と印だけ、緑（`--line`）はLINEボタン専用です。
+- トップの見せ場は「数字でみるルール」（100g／3年／150m／30m）。制度が変わったら `index.html` の `.numbers` を更新してください。
+- **フォント**は Google Fonts（Zen Kaku Gothic New / Outfit）を読み込みます。
 
 ## 注意事項
 

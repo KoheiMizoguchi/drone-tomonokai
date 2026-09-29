@@ -14,20 +14,20 @@
 {%- if featured.size > 0 or room_on %}
   <section class="sec" id="items">
     <div class="wrap">
-      <div class="sec-head rv">
-        <span class="tag t-coral">おすすめ<wbr>アイテム</span>
+      <div class="sec-head">
+        <span class="tag">Recommended</span>
         <h2>機体の<wbr>ほかに、<wbr>そろえて<wbr>おきたい<wbr>道具。</h2>
         <p>練習や<wbr>持ち運びで<wbr>「あってよかった」<wbr>ものを、<wbr>理由と<wbr>いっしょに<wbr>紹介します。</p>
       </div>
       {%- if featured.size > 0 %}
-      <div class="room-grid rv">
+      <div class="room-grid">
         {%- for it in featured %}
         {% include room-item.html id=it.id %}
         {%- endfor %}
       </div>
-      <div class="col-more rv"><a class="more-link" href="{{ '/items/' | relative_url }}">おすすめアイテムを<wbr>すべて<wbr>見る<span aria-hidden="true"> →</span></a></div>
+      <div class="col-more"><a class="btn-ghost" href="{{ '/items/' | relative_url }}">おすすめアイテムを<wbr>すべて<wbr>見る</a></div>
       {%- endif %}
-      <div class="rv">{% include room-banner.html %}</div>
+      {% include room-banner.html %}
     </div>
   </section>
 {%- endif %}
