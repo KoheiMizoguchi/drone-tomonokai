@@ -1,29 +1,29 @@
-{%- comment -%} LPの「SNSでも発信中」セクション（④SNS）。_data/sns.yml にURL入りのSNSがなければ何も出さない {%- endcomment -%}
+{%- comment -%} LPの最後のSNS欄（④SNS）。LINE以外のSNSにURLが入るまで何も出さない。1行＝1SNSの罫線リスト {%- endcomment -%}
 {%- include sns-count.html -%}
 {%- if sns_count > 0 %}
-  <section class="sec{% if include.final %} is-final{% endif %}" id="sns">
+  <section class="sec alt" id="sns">
     <div class="wrap">
       <div class="sec-head">
         <span class="tag">Follow us</span>
         <h2>SNSでも、<wbr>発信しています。</h2>
-        <p>毎朝の<wbr>情報は<wbr>LINE、<wbr>ニュースの<wbr>速報は<wbr>X、<wbr>映像は<wbr>InstagramとYouTube、<wbr>じっくり<wbr>読む<wbr>記事は<wbr>note。<wbr>見たい<wbr>形で<wbr>フォローしてください。</p>
+        <p>見たい<wbr>形で、<wbr>フォローしてください。</p>
       </div>
-      <div class="sns-grid">
+      <ul class="sns-list">
         {%- for a in site.data.sns %}
         {%- assign u = a.url -%}
         {%- assign ulen = u | size -%}{%- if a.name == "LINE" and ulen == 0 -%}{%- assign u = site.line_url -%}{%- endif -%}
         {%- assign ulen = u | size -%}{%- if ulen > 0 %}
-        <a class="sns-card" href="{{ u }}" target="_blank" rel="noopener me" data-sns="{{ a.name | downcase }}"{% if a.name == "LINE" %} data-cta="sns"{% endif %}>
-          <span class="sns-ico{% if a.name == 'LINE' %} is-line{% endif %}">{% include sns-icon.html name=a.name size=22 %}</span>
-          <span class="sns-txt">
+        <li>
+          <a class="sns-row{% if a.name == 'LINE' %} is-line{% endif %}" href="{{ u }}" target="_blank" rel="noopener me" data-sns="{{ a.name | downcase }}"{% if a.name == "LINE" %} data-cta="sns"{% endif %}>
+            <span class="sns-ico">{% include sns-icon.html name=a.name size=24 %}</span>
             <span class="sns-name">{{ a.name }}{% assign hlen = a.handle | size %}{% if hlen > 0 %}<small>{{ a.handle }}</small>{% endif %}</span>
             {%- assign tlen = a.text | size -%}{%- if tlen > 0 %}<span class="sns-desc">{{ a.text }}</span>{% endif %}
-          </span>
-          <span class="sns-go">{% if a.name == "LINE" %}友だち追加{% else %}フォローする{% endif %}</span>
-        </a>
+            <span class="sns-go">{% if a.name == "LINE" %}友だち追加{% else %}フォロー{% endif %}</span>
+          </a>
+        </li>
         {%- endif %}
         {%- endfor %}
-      </div>
+      </ul>
     </div>
   </section>
 {%- endif %}

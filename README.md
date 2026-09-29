@@ -70,7 +70,7 @@ LINE登録を主な目標にして、「役に立つ情報 → 信頼 → 登録
 
 ## SNSのリンクを載せる
 
-`_data/sns.yml` に LINE / X / Instagram / YouTube / note の枠を用意してあります。各SNSの `url:` にプロフィールURLを入れると、トップの「SNSでも発信中」、フッター、各コラムの最後に自動で表示されます。
+`_data/sns.yml` に LINE / X / Instagram / YouTube / note の枠を用意してあります。各SNSの `url:` にプロフィールURLを入れると、トップの最後の「SNSでも、発信しています。」（1行＝1SNSの一覧）と、各コラムの最後に自動で表示されます。フッターには出しません。
 
 - `url` が空のSNSは表示されません
 - LINEは `url` が空でも `_config.yml` の `line_url` が使われます

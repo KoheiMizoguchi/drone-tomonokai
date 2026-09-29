@@ -152,11 +152,6 @@ layout: null
 .faq .a{padding:0 56px 26px 0;font-size:15.5px;color:var(--ink-2);line-height:2}
 @media (max-width:900px){.faq-wrap{grid-template-columns:1fr;gap:40px}}
 
-/* ---- SNS（ページの締め）：白→霧グレーのグラデーション ---- */
-#sns.is-final{background:linear-gradient(180deg,#fff 0%,var(--paper-2) 100%)}
-#sns.is-final .sec-head{margin-left:auto;margin-right:auto;text-align:center}
-#sns.is-final .sec-head h2{font-size:clamp(30px,4.4vw,46px)}
-
 /* ---- sticky dock（スマホ） ---- */
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--rule);transform:translateY(120%);transition:transform .28s cubic-bezier(.2,.7,.3,1);display:none}
 .dock.show{transform:translateY(0)}
@@ -479,7 +474,7 @@ layout: null
   </section>
 
   <!-- ============ 8. SNS：最後の誘導（④SNS＋LINE／LINE以外のSNSにURLが入るまで非表示） ============ -->
-  {% include home-sns.html final=true %}
+  {% include home-sns.html %}
 </main>
 
 {% include site-footer.html %}
