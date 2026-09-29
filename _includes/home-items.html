@@ -1,0 +1,34 @@
+{%- comment -%}
+  LPの「おすすめアイテム」セクション（③アフィリエイト）。
+  _data/room_items.yml で featured: true を付けた商品を最大4件表示（1件もなければ先頭から4件）。
+  商品が0件でも、楽天ROOMのURLが設定されていればROOMへの誘導ボックスだけ表示する。
+{%- endcomment -%}
+{%- assign featured = "" | split: "" -%}
+{%- if site.data.room_items and site.data.room_items.size > 0 -%}
+  {%- assign featured = site.data.room_items | where: "featured", true -%}
+  {%- if featured.size == 0 -%}{%- assign featured = site.data.room_items -%}{%- endif -%}
+  {%- assign featured = featured | slice: 0, 4 -%}
+{%- endif -%}
+{%- assign room_on = false -%}
+{%- if site.rakuten_room_url and site.rakuten_room_url != "" -%}{%- assign room_on = true -%}{%- endif -%}
+{%- if featured.size > 0 or room_on %}
+  <section class="sec" id="items">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="tag t-coral">おすすめ<wbr>アイテム</span>
+        <h2>機体の<wbr>ほかに、<wbr>そろえて<wbr>おきたい<wbr>道具。</h2>
+        <p>練習や<wbr>持ち運びで<wbr>「あってよかった」<wbr>ものを、<wbr>理由と<wbr>いっしょに<wbr>紹介します。</p>
+      </div>
+      <p class="pr-note rv"><span class="pr-label">PR</span>このセクションには<wbr>楽天ROOMの<wbr>リンク（広告）が<wbr>含まれます。<wbr>リンク経由で<wbr>購入されると、<wbr>運営者に<wbr>報酬が<wbr>発生することが<wbr>あります。</p>
+      {%- if featured.size > 0 %}
+      <div class="room-grid rv">
+        {%- for it in featured %}
+        {% include room-item.html id=it.id %}
+        {%- endfor %}
+      </div>
+      <div class="col-more rv"><a class="more-link" href="{{ '/items/' | relative_url }}">おすすめアイテムを<wbr>すべて<wbr>見る<span aria-hidden="true"> →</span></a></div>
+      {%- endif %}
+      <div class="rv">{% include room-banner.html %}</div>
+    </div>
+  </section>
+{%- endif %}

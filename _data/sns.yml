@@ -1,0 +1,24 @@
+# ▼ SNSアカウントの一覧 ▼
+# ここに書いたSNSが、トップページの「SNSでも発信中」セクション・フッター・各コラムの最後に表示されます。
+# 1つも書かれていないときは、SNSの表示はすべて非表示になります。
+#
+# 【追加のしかた】下の例の「#」を外して書き換えてください（上から順に表示されます）。
+#   name   … SNSの名前。X / Instagram / YouTube / TikTok / Threads / Facebook / note はアイコンが自動で付きます
+#   url    … プロフィールページのURL
+#   handle … アカウント名（例：@drone_tomonokai）
+#   text   … そのSNSで何を発信しているか（1文）
+#
+# - name: Instagram
+#   url: https://www.instagram.com/xxxxx/
+#   handle: "@xxxxx"
+#   text: 空撮写真と、撮影地のルールをあわせて紹介しています。
+#
+# - name: YouTube
+#   url: https://www.youtube.com/@xxxxx
+#   handle: "@xxxxx"
+#   text: 初フライトの手順や、機体レビューを動画で解説しています。
+#
+# - name: X
+#   url: https://x.com/xxxxx
+#   handle: "@xxxxx"
+#   text: 制度改正などのニュースを、いちばん早くお知らせします。
