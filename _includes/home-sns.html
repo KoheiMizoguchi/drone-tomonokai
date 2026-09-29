@@ -1,7 +1,7 @@
 {%- comment -%} LPの「SNSでも発信中」セクション（④SNS）。_data/sns.yml にURL入りのSNSがなければ何も出さない {%- endcomment -%}
 {%- include sns-count.html -%}
 {%- if sns_count > 0 %}
-  <section class="sec" id="sns">
+  <section class="sec{% if include.final %} is-final{% endif %}" id="sns">
     <div class="wrap">
       <div class="sec-head">
         <span class="tag">Follow us</span>

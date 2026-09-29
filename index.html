@@ -152,14 +152,10 @@ layout: null
 .faq .a{padding:0 56px 26px 0;font-size:15.5px;color:var(--ink-2);line-height:2}
 @media (max-width:900px){.faq-wrap{grid-template-columns:1fr;gap:40px}}
 
-/* ---- final ---- */
-.final{padding:140px 32px;text-align:center;background:linear-gradient(180deg,#fff 0%,var(--paper-2) 100%)}
-.final .f-in{max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px}
-.final h2{font-size:clamp(32px,5vw,52px);line-height:1.35}
-.final p{font-size:16.5px;color:var(--ink-2);max-width:34em}
-.final .btn{margin-top:14px;padding:20px 44px;font-size:17px}
-.final .micro{justify-content:center}
-@media (max-width:760px){.final{padding:96px 20px}.final .btn{width:100%}}
+/* ---- SNS（ページの締め）：白→霧グレーのグラデーション ---- */
+#sns.is-final{background:linear-gradient(180deg,#fff 0%,var(--paper-2) 100%)}
+#sns.is-final .sec-head{margin-left:auto;margin-right:auto;text-align:center}
+#sns.is-final .sec-head h2{font-size:clamp(30px,4.4vw,46px)}
 
 /* ---- sticky dock（スマホ） ---- */
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--rule);transform:translateY(120%);transition:transform .28s cubic-bezier(.2,.7,.3,1);display:none}
@@ -173,11 +169,8 @@ layout: null
 <body>
 
 {% include site-header.html cta="header" %}
-{%- include sns-count.html -%}
-{%- assign has_sns = false -%}
-{%- if sns_count > 0 -%}{%- assign has_sns = true -%}{%- endif -%}
 <main>
-  <!-- ============ 0. HERO：LINE登録（主CTA）＋情報への副導線 ============ -->
+  <!-- ============ 0. HERO：LINE登録（主CTA） ============ -->
   <section class="hero">
     <div class="hero-media">
       <picture>
@@ -445,11 +438,8 @@ layout: null
     </div>
   </section>
 
-  <!-- ============ 7. SNS：各SNSへの誘導（④SNS／_data/sns.yml が空なら非表示） ============ -->
-  {% include home-sns.html %}
-
-  <!-- ============ 8. FAQ ============ -->
-  <section class="{% if has_sns %}sec alt{% else %}sec{% endif %}" id="faq">
+  <!-- ============ 7. FAQ ============ -->
+  <section class="sec" id="faq">
     <div class="wrap faq-wrap">
       <div class="sec-head">
         <span class="tag">FAQ</span>
@@ -488,22 +478,8 @@ layout: null
     </div>
   </section>
 
-  <!-- ============ 9. FINAL：最後のLINE誘導（②LINE） ============ -->
-  <section class="final">
-    <div class="f-in">
-      <h2><span class="ln">知らなかった、<wbr>で<wbr>終わらせない。</span></h2>
-      <p>いま<wbr>友だち<wbr>追加すると、<wbr>初心者向け<wbr>PDF3点が<wbr>その場で<wbr>届きます。<wbr>明日の<wbr>朝7時から、<wbr>配信がはじまります。</p>
-      <a class="btn" href="{{ site.line_url }}" target="_blank" rel="noopener" data-cta="final">
-        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6c-5.2 0-9.4 3.4-9.4 7.6 0 3.8 3.3 6.9 7.8 7.5.3.06.7.2.81.46.1.24.06.6.03.85l-.13.79c-.04.23-.19.9.79.49s5.27-3.1 7.19-5.32c1.33-1.45 1.96-2.93 1.96-4.77 0-4.2-4.23-7.6-9.45-7.6Z"/></svg>
-        <span>LINEで<wbr>友だち<wbr>追加<wbr>（無料）<span class="btn-sub">PDF3点を<wbr>その場で<wbr>受け<wbr>取る</span></span>
-      </a>
-      <div class="micro">
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>登録は<wbr>無料</span>
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>名前・電話番号の<wbr>入力なし</span>
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>いつでも<wbr>ブロックできます</span>
-      </div>
-    </div>
-  </section>
+  <!-- ============ 8. SNS：最後の誘導（④SNS＋LINE／LINE以外のSNSにURLが入るまで非表示） ============ -->
+  {% include home-sns.html final=true %}
 </main>
 
 {% include site-footer.html %}
