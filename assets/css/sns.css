@@ -1,0 +1,38 @@
+/* SNSへの誘導：LPのカード／フッター・記事末のアイコン列。各SNSのブランド色は使わず、サイトの配色で統一 */
+
+.sns-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.sns-card{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;
+  padding:18px 20px;text-decoration:none;color:inherit;
+  background:var(--paper-3);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow);
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.sns-card:hover{transform:translateY(-3px);border-color:var(--ink-2);box-shadow:var(--shadow-lg)}
+.sns-card:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.sns-ico{
+  width:46px;height:46px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--ink);color:var(--paper);
+}
+.sns-txt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.sns-name{font-family:var(--f-head);font-weight:700;font-size:16px;line-height:1.4}
+.sns-name small{display:block;font-family:var(--f-mono);font-size:11px;font-weight:400;letter-spacing:.04em;color:var(--ink-3);margin-top:2px}
+.sns-desc{font-size:13px;color:var(--ink-2);line-height:1.75;word-break:normal;word-break:auto-phrase}
+.sns-go{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--ink-2);white-space:nowrap}
+
+.sns-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.sns-links-h{font-family:var(--f-head);font-weight:700;font-size:14px}
+.sns-links-row{display:flex;flex-wrap:wrap;gap:8px}
+.sns-links-row a{
+  width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:var(--ink);background:var(--paper-3);border:1px solid var(--rule-2);
+  transition:background .15s ease,color .15s ease,border-color .15s ease;
+}
+.sns-links-row a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sns-links-row a:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.sns-links.boxed{
+  margin-top:28px;padding:18px 22px;justify-content:space-between;
+  border:1px solid var(--rule);border-radius:var(--r);background:var(--paper-2);
+}
+footer .sns-links{margin:4px 0 2px}
+footer .sns-links-row a{width:36px;height:36px;text-decoration:none}
