@@ -11,13 +11,13 @@
       <div class="sns-grid">
         {%- for a in site.data.sns %}
         {%- assign u = a.url -%}
-        {%- if a.name == "LINE" and u == blank -%}{%- assign u = site.line_url -%}{%- endif -%}
-        {%- if u != blank %}
+        {%- assign ulen = u | size -%}{%- if a.name == "LINE" and ulen == 0 -%}{%- assign u = site.line_url -%}{%- endif -%}
+        {%- assign ulen = u | size -%}{%- if ulen > 0 %}
         <a class="sns-card" href="{{ u }}" target="_blank" rel="noopener me" data-sns="{{ a.name | downcase }}"{% if a.name == "LINE" %} data-cta="sns"{% endif %}>
           <span class="sns-ico{% if a.name == 'LINE' %} is-line{% endif %}">{% include sns-icon.html name=a.name size=22 %}</span>
           <span class="sns-txt">
-            <span class="sns-name">{{ a.name }}{% if a.handle != blank %}<small>{{ a.handle }}</small>{% endif %}</span>
-            {%- if a.text != blank %}<span class="sns-desc">{{ a.text }}</span>{% endif %}
+            <span class="sns-name">{{ a.name }}{% assign hlen = a.handle | size %}{% if hlen > 0 %}<small>{{ a.handle }}</small>{% endif %}</span>
+            {%- assign tlen = a.text | size -%}{%- if tlen > 0 %}<span class="sns-desc">{{ a.text }}</span>{% endif %}
           </span>
           <span class="sns-go">{% if a.name == "LINE" %}友だち追加{% else %}フォローする{% endif %}</span>
         </a>

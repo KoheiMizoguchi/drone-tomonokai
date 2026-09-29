@@ -6,8 +6,8 @@
   <span class="sns-links-row">
     {%- for a in site.data.sns %}
     {%- assign u = a.url -%}
-    {%- if a.name == "LINE" and u == blank -%}{%- assign u = site.line_url -%}{%- endif -%}
-    {%- if u != blank %}
+    {%- assign ulen = u | size -%}{%- if a.name == "LINE" and ulen == 0 -%}{%- assign u = site.line_url -%}{%- endif -%}
+    {%- assign ulen = u | size -%}{%- if ulen > 0 %}
     <a href="{{ u }}" target="_blank" rel="noopener me" aria-label="{{ a.name }}" title="{{ a.name }}" data-sns="{{ a.name | downcase }}">{% include sns-icon.html name=a.name size=19 %}</a>
     {%- endif %}
     {%- endfor %}
