@@ -1,0 +1,11 @@
+{%- comment -%} 楽天ROOM（自分のROOMページ）への誘導ボックス。_config.yml の rakuten_room_url が空なら何も出さない {%- endcomment -%}
+{%- if site.rakuten_room_url and site.rakuten_room_url != "" %}
+<aside class="room-banner">
+  <span class="pr-label">PR</span>
+  <div class="room-banner-txt">
+    <p class="room-banner-h">楽天ROOMで、<wbr>実際に<wbr>使っている<wbr>道具を<wbr>紹介中</p>
+    <p class="room-banner-sub">機体・バッテリー・練習用品など、<wbr>初心者に<wbr>役立つ<wbr>アイテムを<wbr>まとめています。</p>
+  </div>
+  <a class="room-btn" href="{{ site.rakuten_room_url }}" target="_blank" rel="sponsored noopener" data-room="profile">楽天ROOMを<wbr>見る<span aria-hidden="true"> →</span></a>
+</aside>
+{%- endif %}

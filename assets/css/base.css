@@ -165,7 +165,7 @@ img,svg{max-width:100%}
 .brand small{display:block;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:400;line-height:1}
 .brand-mark{flex:none}
 @media (max-width:720px){.topbar .btn{font-size:13px;padding:11px 18px}.topbar .wrap{height:58px}.brand{font-size:14.5px}}
-@media (max-width:420px){.topbar .btn{display:none}}
+@media (max-width:560px){.topbar .btn{display:none}}
 
 /* ---- footer ---- */
 footer{padding:40px 0 104px;border-top:1px solid var(--rule);background:var(--paper)}

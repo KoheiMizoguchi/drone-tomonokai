@@ -1,0 +1,25 @@
+{%- comment -%}
+  楽天ROOMの商品カード。_data/room_items.yml の id を指定して使う。
+  例：include room-item.html id="landing-pad"（前後を波かっこ＋％で囲む）
+{%- endcomment -%}
+{%- assign item = nil -%}
+{%- if site.data.room_items -%}
+{%- assign item = site.data.room_items | where: "id", include.id | first -%}
+{%- endif -%}
+{%- if item -%}
+{%- if item.image contains "://" -%}{%- assign img = item.image -%}{%- elsif item.image -%}{%- assign img = item.image | relative_url -%}{%- else -%}{%- assign img = nil -%}{%- endif -%}
+<div class="room-item">
+  <span class="pr-label" title="広告（楽天ROOMのリンク）">PR</span>
+  <a class="room-img" href="{{ item.url }}" target="_blank" rel="sponsored noopener" tabindex="-1" aria-hidden="true">
+    {%- if img %}<img src="{{ img }}" alt="" loading="lazy">{% else %}<span class="room-noimg">R</span>{% endif -%}
+  </a>
+  <div class="room-body">
+    {%- if item.category %}<span class="room-cat">{{ item.category }}</span>{% endif %}
+    <a class="room-name" href="{{ item.url }}" target="_blank" rel="sponsored noopener" data-room="{{ item.id }}">{{ item.name }}</a>
+    {%- if item.comment %}
+    <p class="room-comment">{{ item.comment }}</p>
+    {%- endif %}
+    <a class="room-btn" href="{{ item.url }}" target="_blank" rel="sponsored noopener" data-room="{{ item.id }}">楽天で<wbr>見る<span aria-hidden="true"> →</span></a>
+  </div>
+</div>
+{%- endif -%}

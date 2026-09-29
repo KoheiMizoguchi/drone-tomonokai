@@ -5,10 +5,16 @@
       <li>制度の<wbr>内容は<wbr>2026年9月時点のものです。<wbr>航空法や<wbr>登録制度は<wbr>改正されることがあります。</li>
       <li>飛行前に<wbr>必ず<a href="https://www.mlit.go.jp/koku/drone/" target="_blank" rel="noopener">国土交通省の<wbr>飛行ルール</a>と、<wbr>飛行場所の<wbr>管理者・自治体の<wbr>ルールを<wbr>ご確認ください。</li>
       <li>当アカウントの<wbr>発信は<wbr>情報提供であり、<wbr>許可申請の<wbr>可否を<wbr>保証するものではありません。</li>
+      {%- if site.rakuten_room_url != "" or site.data.room_items.size > 0 %}
+      <li>当サイトには<wbr>楽天ROOMの<wbr>リンク（広告）が<wbr>含まれます。<wbr>リンク経由で<wbr>商品が<wbr>購入されると、<wbr>運営者に<wbr>報酬が<wbr>発生することが<wbr>あります。</li>
+      {%- endif %}
     </ul>
     <nav class="f-nav" aria-label="サイト内リンク">
       <a href="{{ '/' | relative_url }}">トップ</a>
       <a href="{{ '/columns/' | relative_url }}">コラム一覧</a>
+      {%- if site.rakuten_room_url != "" or site.data.room_items.size > 0 %}
+      <a href="{{ '/items/' | relative_url }}">おすすめアイテム</a>
+      {%- endif %}
       <a href="{{ '/columns/feed.xml' | relative_url }}">RSS</a>
     </nav>
     <div class="f-meta">ドローン友の会 ／ LAST UPDATED 2026.09</div>
