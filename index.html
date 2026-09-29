@@ -43,7 +43,7 @@ layout: null
   .hero-media::after{background:linear-gradient(0deg,rgba(0,28,64,.82) 0%,rgba(0,28,64,.55) 52%,rgba(0,28,64,.12) 80%)}
   .hero-inner{padding:80px 20px 40px}
   .hero-kicker{font-size:14px}
-  .hero h1{margin:12px 0 16px}
+  .hero h1{font-size:clamp(30px,9vw,40px);margin:12px 0 16px}
   .hero .lead{font-size:15px;line-height:1.9}
   .hero-offer{margin:20px 0 22px;font-size:14px}
   .hero-cta{flex-direction:column;align-items:stretch}
@@ -138,6 +138,7 @@ layout: null
 /* ---- faq ---- */
 .faq-wrap{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start}
 .faq-wrap .sec-head{margin-bottom:0}
+.faq-wrap .sec-head h2{font-size:clamp(28px,3vw,34px)}
 .faq{border-top:2px solid #000}
 .faq details{border-bottom:1px solid var(--rule-2)}
 .faq summary{cursor:pointer;list-style:none;padding:24px 56px 24px 0;position:relative;font-weight:700;font-size:17px;line-height:1.7}
@@ -446,7 +447,7 @@ layout: null
     <div class="wrap faq-wrap">
       <div class="sec-head">
         <span class="tag">FAQ</span>
-        <h2>気になるところ、<wbr>先に<wbr>お答えします。</h2>
+        <h2><span class="ln">気になるところ、</span><span class="ln">先に<wbr>お答えします。</span></h2>
       </div>
       <div class="faq">
         <details>
