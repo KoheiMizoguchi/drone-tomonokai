@@ -1,0 +1,50 @@
+---
+layout: base
+title: コラム
+description: ドローン友の会のコラム一覧。制度の背景や機体選び、練習のコツなど、LINEでは書ききれない内容をまとめています。
+---
+<section class="sec col-index">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">COLUMNS</span>
+      <h1 class="col-index-h">コラム</h1>
+      <p>制度の<wbr>背景や<wbr>機体選び、<wbr>練習の<wbr>コツまで。<wbr>LINEでは<wbr>書ききれない<wbr>ことを、<wbr>じっくり<wbr>まとめています。</p>
+    </div>
+
+    {%- assign cats = site.posts | map: "category" | compact | uniq %}
+    {%- if cats.size > 1 %}
+    <div class="cat-filter" role="group" aria-label="カテゴリで絞り込む">
+      <button type="button" class="cat-chip" aria-pressed="true" data-cat="">すべて</button>
+      {%- for c in cats %}
+      <button type="button" class="cat-chip" aria-pressed="false" data-cat="{{ c }}">{{ c }}</button>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+
+    {%- if site.posts.size > 0 %}
+    {% include column-cards.html posts=site.posts %}
+    {%- else %}
+    <p class="col-empty">記事は準備中です。</p>
+    {%- endif %}
+
+    {% include line-cta.html cta="column-index" %}
+  </div>
+</section>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.cat-chip');
+  if(!chips.length) return;
+  var cards=document.querySelectorAll('.col-grid .col-card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      var c=chip.getAttribute('data-cat');
+      chips.forEach(function(x){x.setAttribute('aria-pressed',String(x===chip))});
+      cards.forEach(function(card){
+        var cat=card.querySelector('.col-cat');
+        card.hidden = !!c && (!cat || cat.textContent!==c);
+      });
+    });
+  });
+})();
+</script>

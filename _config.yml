@@ -1,0 +1,41 @@
+# ドローン友の会 — サイト設定（GitHub Pages / Jekyll）
+# この設定を変えたときは、GitHubに反映後1〜2分で公開サイトに反映されます。
+
+title: ドローン友の会
+description: 初心者のためのドローン情報。買ってから飛ばすまでに必要なことを、順番どおりに。
+lang: ja_JP
+timezone: Asia/Tokyo
+
+url: https://koheimizoguchi.github.io
+baseurl: /drone-tomonokai
+
+# LINE公式アカウントの友だち追加リンク（コラムページのCTAで使用）
+line_url: https://lin.ee/XqapxDi
+
+# コラム記事のURL： /columns/2026/09/registration-basics/ の形になります
+permalink: /columns/:year/:month/:title/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  path: columns/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: column
+      author: ドローン友の会
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+
+exclude:
+  - README.md
+  - .gitignore

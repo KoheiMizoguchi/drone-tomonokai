@@ -1,0 +1,21 @@
+{%- comment -%}
+  コラムのカード一覧。include.posts … 表示する記事の配列 / include.reveal … LPのフェードイン用に rv を付ける
+{%- endcomment -%}
+<div class="col-grid">
+  {%- for post in include.posts %}
+  <a class="col-card{% if include.reveal %} rv{% endif %}" href="{{ post.url | relative_url }}">
+    {%- if post.image %}
+    <span class="col-thumb"><img src="{{ post.image | relative_url }}" alt="" loading="lazy"></span>
+    {%- endif %}
+    <span class="col-meta">
+      {%- if post.category %}<span class="col-cat">{{ post.category }}</span>{% endif %}
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+    </span>
+    <span class="col-title">{{ post.title }}</span>
+    {%- if post.description %}
+    <span class="col-desc">{{ post.description }}</span>
+    {%- endif %}
+    <span class="col-go">読む<span aria-hidden="true"> →</span></span>
+  </a>
+  {%- endfor %}
+</div>

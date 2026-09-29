@@ -1,0 +1,48 @@
+---
+layout: base
+---
+<article class="col-article">
+  <div class="col-wrap">
+    <nav class="crumbs" aria-label="パンくずリスト">
+      <a href="{{ '/' | relative_url }}">トップ</a><span aria-hidden="true">/</span><a href="{{ '/columns/' | relative_url }}">コラム</a>
+    </nav>
+
+    <header class="col-head">
+      <div class="col-meta">
+        {%- if page.category %}<span class="col-cat">{{ page.category }}</span>{% endif %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+        {%- if page.last_modified_at %}
+        <span class="col-upd">更新 <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%Y.%m.%d" }}</time></span>
+        {%- endif %}
+      </div>
+      <h1>{{ page.title }}</h1>
+      {%- if page.description %}
+      <p class="col-lead">{{ page.description }}</p>
+      {%- endif %}
+    </header>
+
+    {%- if page.image %}
+    <figure class="col-hero"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' }}"></figure>
+    {%- endif %}
+
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    <p class="col-note">
+      この記事は{{ page.date | date: "%Y年%-m月%-d日" }}時点の情報です。<wbr>制度は改正されることがあるため、<wbr>飛行前には<a href="https://www.mlit.go.jp/koku/drone/" target="_blank" rel="noopener">国土交通省の<wbr>最新情報</a>を<wbr>ご確認ください。
+    </p>
+
+    {% include line-cta.html cta="column" %}
+
+    <nav class="pager" aria-label="前後の記事">
+      {%- if page.previous %}
+      <a class="pager-prev" href="{{ page.previous.url | relative_url }}"><small>前の記事</small>{{ page.previous.title }}</a>
+      {%- else %}<span></span>{% endif %}
+      {%- if page.next %}
+      <a class="pager-next" href="{{ page.next.url | relative_url }}"><small>次の記事</small>{{ page.next.title }}</a>
+      {%- endif %}
+    </nav>
+    <p class="back"><a class="more-link" href="{{ '/columns/' | relative_url }}"><span aria-hidden="true">← </span>コラム一覧へ</a></p>
+  </div>
+</article>
