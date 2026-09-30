@@ -39,7 +39,8 @@
 
 /* ---- おすすめページ ---- */
 .room-group-h{font-size:clamp(20px,2.6vw,24px);margin:64px 0 20px;padding-top:22px;border-top:2px solid #000}
-.room-group-h:first-of-type{margin-top:0}
+.room-pick-h{font-size:clamp(24px,3vw,30px);margin:88px 0 8px}
+.room-pick-h+.room-group-h{margin-top:24px}
 .room-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media (max-width:900px){.room-grid{grid-template-columns:1fr}}
 .col-related{margin-top:56px}
