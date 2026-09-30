@@ -1,0 +1,21 @@
+---
+layout: base
+title: ページが見つかりません
+permalink: /404.html
+sitemap: false
+---
+<section class="sec col-index nf">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">404</span>
+      <h1 class="col-index-h">ページが見つかりません</h1>
+      <p>URLが<wbr>間違っているか、<wbr>ページが<wbr>移動・削除された<wbr>可能性があります。<wbr>下の<wbr>リンクから<wbr>お探しください。</p>
+    </div>
+    <ul class="nf-links">
+      <li><a href="{{ '/' | relative_url }}">トップページ<small>ドローンの登録・飛行場所・飛行方法の基本</small></a></li>
+      <li><a href="{{ '/columns/' | relative_url }}">コラム一覧<small>制度の背景や機体選び、練習のコツ</small></a></li>
+      <li><a href="{{ '/items/' | relative_url }}">おすすめアイテム<small>練習や持ち運びに役立つ道具</small></a></li>
+    </ul>
+    {% include line-cta.html cta="404" %}
+  </div>
+</section>
