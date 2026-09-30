@@ -9,7 +9,7 @@
   --paper-3:#FFFFFF;    /* カード面 */
   --ink:#000000;        /* 見出し・本文 */
   --ink-2:#4A5057;      /* 補足文 */
-  --ink-3:#7A8087;      /* 注記・日付 */
+  --ink-3:#666C73;      /* 注記・日付（白・霧グレーの上でコントラスト4.5以上） */
   --rule:#E4E7EA;       /* 罫線 */
   --rule-2:#CDD2D6;
 
@@ -29,8 +29,9 @@
   --on-chip:#FFFFFF;
 
   /* LINE（登録ボタン専用） */
-  --line:#06C755;
-  --line-deep:#05A948;
+  --line:#06C755;       /* LINEのブランド色：アイコンなど文字以外に使う */
+  --line-btn:#007F37;   /* LINEボタンの背景：白文字でコントラスト5.1 */
+  --line-deep:#006A2E;  /* LINEボタンのホバー */
   --line-ink:#FFFFFF;
 
   --shadow:none;
@@ -72,7 +73,7 @@ img,svg{max-width:100%}
 /* ---- section head：英字の小見出し＋和文の大見出し ---- */
 .tag{
   display:block;font-family:var(--f-en);font-size:17px;font-weight:600;letter-spacing:.01em;
-  color:var(--signal);line-height:1.3;
+  color:var(--signal-deep);line-height:1.3;
 }
 .sec-head{max-width:760px;margin-bottom:56px}
 .sec-head .tag{margin-bottom:14px}
@@ -84,7 +85,7 @@ img,svg{max-width:100%}
 /* ---- buttons：丸いピル型。緑＝LINE、白＝その他 ---- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  background:var(--line);color:var(--line-ink);
+  background:var(--line-btn);color:var(--line-ink);
   font-family:var(--f-head);font-weight:700;font-size:16px;letter-spacing:.02em;line-height:1.4;
   padding:17px 36px;border-radius:var(--pill);text-decoration:none;border:none;
   transition:background .18s ease,transform .18s ease;

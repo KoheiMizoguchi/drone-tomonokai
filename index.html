@@ -6,13 +6,18 @@ layout: null
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ドローン友の会</title>
+<title>ドローン友の会｜ゼロから始める、ドローン初心者の教科書</title>
+<link rel="canonical" href="{{ '/' | absolute_url }}">
 <meta name="description" content="{{ site.description }}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{ site.title }}">
+<meta property="og:title" content="ドローン友の会｜ゼロから始める、ドローン初心者の教科書">
 <meta property="og:description" content="{{ site.description }}">
 <meta property="og:url" content="{{ '/' | absolute_url }}">
-<meta property="og:image" content="{{ '/assets/img/hero-drone.jpg' | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/img/og-default.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 {% include head-common.html %}
 <style>
@@ -92,7 +97,7 @@ layout: null
 .bubble{background:var(--paper-2);border-radius:18px 18px 18px 4px;padding:18px 20px;font-size:14px;line-height:1.9}
 .bubble .b-head{font-weight:900;font-size:15px;margin-bottom:10px}
 .bubble .b-row{display:flex;gap:10px;padding:4px 0}
-.bubble .b-row span:first-child{flex:none;font-family:var(--f-en);font-weight:600;color:var(--signal);width:14px}
+.bubble .b-row span:first-child{flex:none;font-family:var(--f-en);font-weight:600;color:var(--signal-deep);width:14px}
 .bubble .b-foot{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule-2);font-size:12.5px;color:var(--ink-2)}
 .phone-cap{font-size:12.5px;color:var(--ink-3);margin-top:14px;text-align:center}
 @media (max-width:900px){.feed{grid-template-columns:1fr;gap:48px}.feed-item{grid-template-columns:1fr;gap:6px}.phone{max-width:380px}}
@@ -119,7 +124,7 @@ layout: null
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid #000}
 .steps li{padding:22px 20px 4px 0}
 .steps li+li{padding-left:20px;border-left:1px solid var(--rule)}
-.steps b{display:block;font-family:var(--f-en);font-weight:600;font-size:15px;color:var(--signal);margin-bottom:6px}
+.steps b{display:block;font-family:var(--f-en);font-weight:600;font-size:15px;color:var(--signal-deep);margin-bottom:6px}
 .steps span{font-weight:900;font-size:17px;line-height:1.6}
 @media (max-width:760px){
   .flow{grid-template-columns:1fr;margin-top:72px}
@@ -185,7 +190,7 @@ layout: null
         <div class="hero-cta">
           <a class="btn" href="{{ site.line_url }}" target="_blank" rel="noopener" data-cta="hero">
             <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6c-5.2 0-9.4 3.4-9.4 7.6 0 3.8 3.3 6.9 7.8 7.5.3.06.7.2.81.46.1.24.06.6.03.85l-.13.79c-.04.23-.19.9.79.49s5.27-3.1 7.19-5.32c1.33-1.45 1.96-2.93 1.96-4.77 0-4.2-4.23-7.6-9.45-7.6Z"/></svg>
-            <span>LINEで<wbr>3点セットを<wbr>受け<wbr>取る<span class="btn-sub">無料・30秒で<wbr>完了</span></span>
+            <span>LINEで<wbr>特典を<wbr>受け<wbr>取る<span class="btn-sub">無料・30秒で<wbr>完了</span></span>
           </a>
         </div>
       </div>
@@ -370,7 +375,7 @@ layout: null
       <div class="cta-inline">
         <a class="btn" href="{{ site.line_url }}" target="_blank" rel="noopener" data-cta="gifts">
           <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6c-5.2 0-9.4 3.4-9.4 7.6 0 3.8 3.3 6.9 7.8 7.5.3.06.7.2.81.46.1.24.06.6.03.85l-.13.79c-.04.23-.19.9.79.49s5.27-3.1 7.19-5.32c1.33-1.45 1.96-2.93 1.96-4.77 0-4.2-4.23-7.6-9.45-7.6Z"/></svg>
-          <span>3点セットを<wbr>無料で<wbr>受け<wbr>取る<span class="btn-sub">追加後すぐに<wbr>届きます</span></span>
+          <span>LINEで<wbr>特典を<wbr>受け<wbr>取る<span class="btn-sub">無料・追加後すぐに<wbr>届きます</span></span>
         </a>
         <div class="micro">
           <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>登録は<wbr>無料</span>
@@ -478,7 +483,7 @@ layout: null
   <p class="d-note">友だち<wbr>追加で<wbr>PDF3点を<wbr>プレゼント ／ 登録無料</p>
   <a class="btn wide" href="{{ site.line_url }}" target="_blank" rel="noopener" data-cta="dock">
     <svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6c-5.2 0-9.4 3.4-9.4 7.6 0 3.8 3.3 6.9 7.8 7.5.3.06.7.2.81.46.1.24.06.6.03.85l-.13.79c-.04.23-.19.9.79.49s5.27-3.1 7.19-5.32c1.33-1.45 1.96-2.93 1.96-4.77 0-4.2-4.23-7.6-9.45-7.6Z"/></svg>
-    LINEで<wbr>無料で<wbr>受け<wbr>取る
+    LINEで<wbr>特典を<wbr>受け<wbr>取る
   </a>
 </div>
 
