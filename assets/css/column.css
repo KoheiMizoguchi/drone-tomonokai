@@ -114,3 +114,8 @@
 .nf-links a small{font-size:14px;font-weight:500;color:var(--ink-2)}
 .nf-links a:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
 .nf-links a:hover small{text-decoration:none}
+
+/* ---- 固定ページ（運営者情報・プライバシーポリシー・お問い合わせ） ---- */
+.col-head .tag{margin-bottom:14px}
+.prose .btn{color:#fff;text-decoration:none}
+footer .f-sub{margin-top:0;font-weight:500;font-size:13px}

@@ -16,6 +16,10 @@ line_url: https://lin.ee/XqapxDi
 # 空のままだと、ROOMへの誘導ボックスとヘッダーの「おすすめ」リンクは表示されません
 rakuten_room_url: "https://room.rakuten.co.jp/room_584cfed81d/items"
 
+# Googleアナリティクスの測定ID（例："G-XXXXXXXXXX"）
+# 空のままだとアナリティクスは読み込まれません。入れるとプライバシーポリシーの記載どおり計測が始まります
+google_analytics_id: ""
+
 # コラム記事のURL： /columns/2026/09/registration-basics/ の形になります
 permalink: /columns/:year/:month/:title/
 

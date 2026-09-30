@@ -1,0 +1,26 @@
+---
+layout: base
+---
+<article class="col-article">
+  <div class="col-wrap">
+    <nav class="crumbs" aria-label="パンくずリスト">
+      <a href="{{ '/' | relative_url }}">トップ</a><span aria-hidden="true">/</span><span>{{ page.title }}</span>
+    </nav>
+
+    <header class="col-head">
+      {%- if page.tag %}<span class="tag">{{ page.tag }}</span>{% endif %}
+      <h1>{{ page.title }}</h1>
+      {%- if page.lead %}
+      <p class="col-lead">{{ page.lead }}</p>
+      {%- endif %}
+    </header>
+
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    {%- if page.updated %}
+    <p class="col-note">制定日：{{ page.established }}{% if page.updated != page.established %}／最終改定日：{{ page.updated }}{% endif %}</p>
+    {%- endif %}
+  </div>
+</article>

@@ -1,0 +1,16 @@
+{%- comment -%} Googleアナリティクス。_config.yml の google_analytics_id が空なら何も出さない {%- endcomment -%}
+{%- assign ga = site.google_analytics_id | default: "" -%}
+{%- assign galen = ga | size -%}
+{%- if galen > 0 %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ ga }}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','{{ ga }}');
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[data-cta],a[data-room],a[data-sns]');if(!a)return;
+  if(a.dataset.cta)gtag('event','line_click',{cta_position:a.dataset.cta});
+  else if(a.dataset.room)gtag('event','room_click',{item_id:a.dataset.room});
+  else gtag('event','sns_click',{sns:a.dataset.sns});
+});
+</script>
+{%- endif %}

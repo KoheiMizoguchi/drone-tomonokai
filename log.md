@@ -1,5 +1,22 @@
 # 作業ログ
 
+## 2026-10-01 運営者情報・プライバシーポリシー・お問い合わせページを追加、Googleアナリティクスの準備
+
+**変更ファイル**
+- `about.md`, `privacy.md`, `contact.md`, `_layouts/page.html`, `_includes/analytics.html`（新規）
+- `_includes/site-footer.html`, `_includes/head-common.html`, `_config.yml`, `assets/css/column.css`
+
+**概要**
+- 運営者情報（/about/）：運営者名「ドローン友の会 運営事務局」、保有資格「一等無人航空機操縦士」、サイトの方針、広告について
+- お問い合わせ（/contact/）：公式LINEのトークで受付
+- プライバシーポリシー（/privacy/）：取得情報、利用目的、Googleアナリティクス、楽天ROOM、外部送信、開示請求など（Claudeが下書き）
+- フッターに3ページへのリンクを追加
+- Googleアナリティクスの読み込みを追加。`_config.yml` の `google_analytics_id` が空の間は動かない。LINE・ROOM・SNSのクリックをイベントとして記録する
+
+**備考**
+- ユーザーの指示でコミット・プッシュ
+- プライバシーポリシーは法的文書のため、公開前にユーザー確認が必要
+
 ## 2026-09-30 LINEボタンの色を戻し、特典PDFの名前を統一
 
 **変更ファイル**
