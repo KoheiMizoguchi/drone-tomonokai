@@ -30,8 +30,8 @@
 
   /* LINE（登録ボタン専用） */
   --line:#06C755;       /* LINEのブランド色：アイコンなど文字以外に使う */
-  --line-btn:#007F37;   /* LINEボタンの背景：白文字でコントラスト5.1 */
-  --line-deep:#006A2E;  /* LINEボタンのホバー */
+  --line-btn:#06C755;   /* LINEボタンの背景：LINEのブランド色（ガイドラインどおり） */
+  --line-deep:#05A948;  /* LINEボタンのホバー */
   --line-ink:#FFFFFF;
 
   --shadow:none;
