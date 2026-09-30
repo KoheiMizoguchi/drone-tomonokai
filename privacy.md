@@ -27,7 +27,7 @@ updated: 2026年10月1日
 
 ## 3. アクセス解析ツールについて
 
-当サイトでは、Google LLC が提供するアクセス解析ツール「Googleアナリティクス」を使用しています（使用を開始した時点から適用します）。Googleアナリティクスは、Cookieを使って閲覧情報を収集します。収集されたデータは Google のプライバシーポリシーに基づいて管理されます。
+当サイトでは、Google LLC が提供するアクセス解析ツール「Googleアナリティクス」を使用しています。Googleアナリティクスは、Cookieを使って閲覧情報を収集します。収集されたデータは Google のプライバシーポリシーに基づいて管理されます。
 
 - Google のプライバシーポリシー：[https://policies.google.com/privacy](https://policies.google.com/privacy)
 - Google のサービスを使用するサイトやアプリから収集した情報の Google による使用：[https://policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites)
@@ -47,7 +47,7 @@ Cookieはブラウザの設定で無効にできます。また、[Googleアナ�
 | 送信先 | サービス | 送信される主な情報 | 目的 |
 |---|---|---|---|
 | Google LLC | Google Fonts | IPアドレス、ブラウザの情報、閲覧したページのURL | 文字の表示（フォントの読み込み） |
-| Google LLC | Googleアナリティクス（使用開始後） | 閲覧情報、Cookieの識別子、端末・ブラウザの情報 | アクセス解析 |
+| Google LLC | Googleアナリティクス | 閲覧情報、Cookieの識別子、端末・ブラウザの情報 | アクセス解析 |
 | GitHub, Inc. | GitHub Pages | IPアドレス、ブラウザの情報、閲覧したページのURL | 当サイトの配信（サーバー） |
 
 公式LINEでのやり取りは、LINEヤフー株式会社のサービス上で行われます。LINEでの情報の取り扱いは、[LINEヤフー株式会社のプライバシーポリシー](https://www.lycorp.co.jp/ja/company/privacypolicy/)をご覧ください。
