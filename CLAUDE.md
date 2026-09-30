@@ -1,0 +1,30 @@
+# ドローン友の会 サイト固有ルール
+
+> 共通ルールは ~/.claude/CLAUDE.md。詳しい編集方法は README.md。
+
+## 公開の仕組み
+- GitHub Pages（Jekyll）。`main` にプッシュすると1〜2分で https://koheimizoguchi.github.io/drone-tomonokai/ に公開される
+- リポジトリは公開（public）。コミットした内容はすべて誰でも見られる
+- 手元に Ruby / Jekyll はない。見た目の確認は、確認用ページを一時フォルダに作り、ヘッドレスEdgeでパソコン幅・スマホ幅のスクリーンショットを撮って行う
+
+## Liquid（テンプレート）の注意
+- 条件式に括弧は使えない
+- `== blank` / `!= blank` はGitHub Pagesで期待どおり動かなかった。空文字の判定は `| size` で長さを見る
+- `.md` や `.html` は front matter がなくても公開される。公開したくないファイルは `_config.yml` の `exclude` に入れる
+
+## 内容のルール
+- サイトの目的: ①ドローン初心者への情報提供 ②公式LINE登録（主な目標） ③楽天ROOMのアフィリエイト ④SNSへの誘導
+- 制度の情報（航空法・機体登録など）は国土交通省などの一次情報で確認する。Claudeが書いた文章は公開前にユーザー確認
+- 楽天ROOMのリンクには「PR」表記と広告である旨の注記を必ず付ける（ステルスマーケティング規制）。リンクは `rel="sponsored"`
+- LINEのリンクは `_config.yml` の `line_url` で一括管理
+
+## デザインのルール
+- 白地・黒の太字ゴシック・広い余白（参考: JINS HOLDINGS）
+- 書体: Zen Kaku Gothic New（和文）＋ Outfit（英字の小見出し・数字）
+- アクセントは航空オレンジ `#FF4F00`（数字と印だけ）。緑 `#06C755` はLINEボタン専用
+- 見出しは「英字の小見出し＋和文の大見出し」、一覧は上に太い黒線・行間に細い線
+- アニメーションはヒーローの登場だけ
+
+## 画像
+- トップ画像: `assets/img/hero-drone.webp` / `.jpg`（Canvaで生成。元データはCanvaの「すべてのプロジェクト」）
+- ロゴ書き出し: `D:\Claude\logo-export\`（リポジトリ外）

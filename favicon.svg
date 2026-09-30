@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1.6 1.6 28.8 28.8">
+<style>.k{stroke:#000}.f{fill:#000}@media (prefers-color-scheme:dark){.k{stroke:#fff}.f{fill:#fff}}</style>
+<circle cx="9" cy="9" r="4.2" fill="none" stroke="#FF4F00" stroke-width="2.4"/>
+<circle cx="23" cy="9" r="4.2" fill="none" stroke="#FF4F00" stroke-width="2.4"/>
+<circle class="k" cx="9" cy="23" r="4.2" fill="none" stroke-width="2.4"/>
+<circle class="k" cx="23" cy="23" r="4.2" fill="none" stroke-width="2.4"/>
+<rect class="f" x="12.5" y="12.5" width="7" height="7" rx="2"/>
+</svg>

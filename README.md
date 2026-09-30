@@ -134,7 +134,7 @@ GitHub のサイト上だけで投稿できます。
 - **CTAの計測**用に各ボタンへ `data-cta="hero|header|gifts|final|dock|column-header|column|column-index"` を付与しています。アクセス解析を入れる際の識別子に使えます。
 - **改行位置を固定したい文章**は `<span class="ln">…</span>`（`display:block`）で行を分けています。
 - **デザイン**：白地・黒の太字ゴシック（Zen Kaku Gothic New）・広い余白。英字の小見出しと数字は Outfit。配色は `assets/css/base.css` の `:root` で一括管理。オレンジ（`--signal`）は数字と印だけ、緑（`--line`）はLINEボタン専用です。
-- トップの見せ場は「数字でみるルール」（100g／3年／150m）。制度が変わったら `index.html` の `.numbers` を更新してください。
+- トップの見せ場は「数字でみるルール」（100g／150m／夜間飛行。登録・飛行場所・飛行方法の3つに対応）。制度が変わったら `index.html` の `.numbers` を更新してください。
 - **フォント**は Google Fonts（Zen Kaku Gothic New / Outfit）を読み込みます。
 
 ## 注意事項
