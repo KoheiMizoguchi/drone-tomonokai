@@ -54,20 +54,20 @@ layout: null
 }
 
 /* ---- learn：数字でみるルール（このページの見せ場） ---- */
-.numbers{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid #000}
-.num{padding:34px 28px 40px 0;border-right:1px solid var(--rule)}
-.num+.num{padding-left:28px}
+.numbers{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid #000}
+.num{padding:34px 32px 40px 0;border-right:1px solid var(--rule)}
+.num+.num{padding-left:32px}
 .num:last-child{border-right:none}
-.num b{display:block;font-family:var(--f-en);font-weight:600;font-size:clamp(56px,7vw,92px);line-height:1;letter-spacing:-.03em;color:var(--signal)}
+.num b{display:block;font-family:var(--f-en);font-weight:600;font-size:clamp(56px,7.4vw,100px);line-height:1;letter-spacing:-.03em;color:var(--signal)}
 .num b span{font-size:.42em;letter-spacing:0;margin-left:4px;font-family:var(--f-head);font-weight:900}
 .num h3{font-size:17px;margin:22px 0 8px}
 .num p{font-size:14.5px;color:var(--ink-2);line-height:1.9}
-@media (max-width:900px){
-  .numbers{grid-template-columns:1fr 1fr}
-  .num{padding:28px 18px 32px 0}
-  .num:nth-child(2n){border-right:none;padding-left:18px}
-  .num:nth-child(3){padding-left:0}
-  .num:nth-child(n+3){border-top:1px solid var(--rule)}
+@media (max-width:760px){
+  .numbers{grid-template-columns:1fr}
+  .num,.num+.num{display:grid;grid-template-columns:140px 1fr;column-gap:18px;align-items:start;padding:26px 0;border-right:none}
+  .num+.num{border-top:1px solid var(--rule)}
+  .num b{grid-row:1 / span 2;font-size:52px}
+  .num h3{margin:4px 0 6px}
 }
 .checks{margin-top:72px;display:grid;gap:0;border-top:1px solid var(--rule)}
 .check{display:grid;grid-template-columns:200px 1fr minmax(0,300px);gap:24px 40px;padding:30px 0;border-bottom:1px solid var(--rule);align-items:start}
@@ -216,11 +216,6 @@ layout: null
           <b>150<span>m</span></b>
           <h3>許可なく飛ばせる高さ</h3>
           <p>地表から<wbr>150m以上の<wbr>空域で<wbr>飛ばすには、<wbr>許可が<wbr>必要です。</p>
-        </div>
-        <div class="num">
-          <b>30<span>m</span></b>
-          <h3>人や物から離す距離</h3>
-          <p>人や<wbr>建物・車などから<wbr>30m未満で<wbr>飛ばすには、<wbr>承認が<wbr>必要です。</p>
         </div>
       </div>
 
