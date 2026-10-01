@@ -139,7 +139,12 @@ layout: null
 .t-card{border-top:2px solid #000;padding-top:24px}
 .t-card h3{font-size:19px;margin-bottom:10px}
 .t-card p{font-size:15px;color:var(--ink-2)}
-.source{margin-top:48px;font-size:13.5px;color:var(--ink-2);line-height:2;max-width:78ch}
+.author{margin-top:48px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding:22px 26px;background:#fff;border-radius:var(--r)}
+.author-h{font-size:13px;font-weight:700;color:var(--ink-2);flex:none}
+.author-txt{font-weight:900;font-size:16.5px;flex:1 1 320px}
+.author-link{font-weight:700;font-size:14px;color:#000;text-underline-offset:4px;white-space:nowrap}
+@media (max-width:760px){.author{padding:20px}.author-txt{font-size:15.5px}}
+.source{margin-top:32px;font-size:13.5px;color:var(--ink-2);line-height:2;max-width:78ch}
 .source a{color:#000;font-weight:700}
 @media (max-width:900px){.trust{grid-template-columns:1fr;gap:32px}}
 
@@ -426,6 +431,11 @@ layout: null
           <h3>用語をそのまま<wbr>使わない</h3>
           <p>DID、<wbr>リモートID、<wbr>レベル4。<wbr>初めて<wbr>見る<wbr>言葉には、<wbr>毎回かんたんな<wbr>説明をつけます。</p>
         </div>
+      </div>
+      <div class="author">
+        <p class="author-h">書いている人</p>
+        <p class="author-txt">鹿児島在住の<wbr>ドローンパイロット。<wbr><span class="nb">一等無人航空機操縦士</span>（国家資格）、<wbr>測量士補。</p>
+        <a class="author-link" href="{{ '/about/' | relative_url }}">運営者情報を<wbr>見る</a>
       </div>
       <p class="source">
         参照元：<a href="https://www.mlit.go.jp/koku/drone/" target="_blank" rel="noopener">国土交通省<wbr>「無人航空機<wbr>（ドローン・ラジコン機等）の<wbr>飛行ルール」</a>ほか、<wbr>公的機関の<wbr>公表資料。<wbr>当アカウントの<wbr>発信は<wbr>情報提供であり、<wbr>許可申請の<wbr>可否を<wbr>保証するものではありません。
