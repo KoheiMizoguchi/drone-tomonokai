@@ -20,7 +20,7 @@ rakuten_room_url: "https://room.rakuten.co.jp/room_584cfed81d/items"
 # 空のままだとアナリティクスは読み込まれません。入れるとプライバシーポリシーの記載どおり計測が始まります
 google_analytics_id: "G-VMJ4M4E86T"
 
-# コラム記事のURL： /columns/2026/09/registration-basics/ の形になります
+# コラム記事のURL： /columns/2026/10/chiriin-map-airspace/ の形になります
 permalink: /columns/:year/:month/:title/
 
 plugins:
