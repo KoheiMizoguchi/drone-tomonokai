@@ -1,6 +1,15 @@
 <footer>
   <div class="wrap f-in">
-    <p class="f-brand">ドローン友の会</p>
+    <a class="f-brand" href="{{ '/' | relative_url }}">
+      <svg width="36" height="36" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="9" cy="9" r="4.2" fill="none" stroke="#FF4F00" stroke-width="2.4"/>
+        <circle cx="23" cy="9" r="4.2" fill="none" stroke="#FF4F00" stroke-width="2.4"/>
+        <circle cx="9" cy="23" r="4.2" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+        <circle cx="23" cy="23" r="4.2" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+        <rect x="12.5" y="12.5" width="7" height="7" rx="2" fill="#FFFFFF"/>
+      </svg>
+      <span>ドローン友の会<small>DRONE STARTER GUIDE</small></span>
+    </a>
     <nav class="f-nav" aria-label="サイト内リンク">
       <a href="{{ '/' | relative_url }}">トップ</a>
       <a href="{{ '/columns/' | relative_url }}">コラム</a>
