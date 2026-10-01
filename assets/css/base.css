@@ -130,9 +130,10 @@ img,svg{max-width:100%}
 /* ---- footer ---- */
 footer{padding:72px 0 120px;background:#000;color:#fff}
 footer .f-in{display:flex;flex-direction:column;gap:14px}
-footer .f-brand{display:inline-flex;align-items:center;gap:14px;align-self:flex-start;font-family:var(--f-head);font-weight:900;font-size:20px;line-height:1.3;color:#fff;text-decoration:none;margin-bottom:8px}
-footer .f-brand small{display:block;font-family:var(--f-en);font-size:11.5px;font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.6)}
-footer .f-brand svg{flex:none}
+/* フッターのロゴ：ヘッダーの .brand と同じ形で白黒反転 */
+.brand-inverse{color:#fff}
+.brand-inverse small{color:rgba(255,255,255,.62)}
+footer a.brand{text-decoration:none;align-self:flex-start;margin-bottom:8px}
 footer .f-ttl{font-size:13px;font-weight:700;color:rgba(255,255,255,.7)}
 footer ul{margin:0;padding-left:1.2em;max-width:74ch}
 footer li{font-size:13px;color:rgba(255,255,255,.72);line-height:2}
