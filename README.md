@@ -13,7 +13,8 @@ GitHub Pages で配信します（Settings → Pages → Branch: `main` / `root`
 
 | ファイル | 内容 |
 |---|---|
-| `index.html` | LP本体。LP専用のCSS・JS・ヒーロー画像（WebP／data URI）を内包 |
+| `index.html` | LP本体。LP専用のCSS・JSを内包 |
+| `assets/video/` | トップの動画（`hero-sea.mp4`）。再生前に出す画像は `assets/img/hero-sea-poster.jpg` |
 | `_posts/` | **コラム記事**（Markdown）。1記事＝1ファイル |
 | `_drafts/column-template.md` | 記事のひな形（このフォルダは公開されません） |
 | `columns/index.html` | コラム一覧ページ（`/columns/`） |

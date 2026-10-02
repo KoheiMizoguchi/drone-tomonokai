@@ -23,14 +23,19 @@ layout: null
 <style>
 /* ===== LP専用スタイル（共通は assets/css/base.css） ===== */
 
-/* ---- hero：白いスタジオ写真＋黒の太字（写真の余白に見出しを置く） ---- */
+/* ---- hero：左に黒の太字、右半分に空撮の動画（海と島） ---- */
 .hero{position:relative;min-height:min(78svh,740px);display:flex;align-items:center;overflow:hidden;background:#FEFEFE;color:#000;border-bottom:1px solid var(--rule)}
-.hero-media{position:absolute;top:0;bottom:0;right:max(32px,calc((100% - var(--wrap)) / 2 + 32px));width:min(44%,580px)}
-.hero-media img{width:100%;height:100%;object-fit:contain;object-position:50% 50%;display:block}
+.hero-media{position:absolute;z-index:3;top:0;bottom:0;left:50%;right:0;background:#0A5BA6}
+.hero-media video{width:100%;height:100%;object-fit:cover;object-position:4% 50%;display:block}
+.hero-pause{position:absolute;right:16px;bottom:16px;display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:#000;cursor:pointer}
+.hero-pause[hidden]{display:none}
+.hero-pause .i-play,.hero-pause.paused .i-pause{display:none}
+.hero-pause.paused .i-play{display:block}
+.hero-pause:focus-visible{outline:2px solid #000;outline-offset:2px}
 .hero-inner{position:relative;z-index:2;width:100%;max-width:var(--wrap);margin:0 auto;padding:96px 32px}
-.hero-card{max-width:600px}
+.hero-card{max-width:min(600px,calc(50% - 48px))}
 .hero-kicker{font-weight:700;font-size:16px;letter-spacing:.04em;color:var(--ink-2)}
-.hero h1{font-size:clamp(38px,5.6vw,66px);line-height:1.28;letter-spacing:.01em;margin:18px 0 24px}
+.hero h1{font-size:clamp(36px,4vw,54px);line-height:1.28;letter-spacing:.01em;margin:18px 0 24px}
 .hero .lead{font-size:17px;font-weight:700;line-height:2;max-width:30em;color:#222}
 .hero-offer{display:flex;align-items:center;gap:12px;margin:28px 0 30px;font-size:15px;font-weight:700}
 .hero-offer svg{flex:none;color:var(--signal)}
@@ -42,11 +47,18 @@ layout: null
 .hero-card>*:nth-child(4){animation-delay:.24s}
 .hero-card>*:nth-child(5){animation-delay:.32s}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}}
-@media (max-width:1180px) and (min-width:761px){.hero-media{width:50%;right:24px}.hero-card{max-width:500px}.hero h1{font-size:clamp(34px,4.6vw,52px)}.hero .lead{max-width:22em}}
-@media (max-width:760px){
+@media (max-width:1180px) and (min-width:761px){.hero-card{max-width:calc(50% - 32px)}.hero h1{font-size:clamp(30px,4.2vw,50px)}.hero .lead{max-width:22em}}
+@media (max-width:900px){
   .hero{display:block;min-height:0;background:#fff}
-  .hero-media{position:relative;right:auto;width:100%;aspect-ratio:3/2;background:#FEFEFE}
-  .hero-media img{object-fit:contain;object-position:50% 50%}
+  .hero-media{position:relative;left:auto;right:auto;z-index:auto;width:100%;aspect-ratio:16/9}
+  .hero-media video{object-position:50% 50%}
+  .hero-pause{right:12px;bottom:12px}
+  .hero-inner{padding:44px 32px 64px}
+  .hero-card{max-width:none}
+  .hero h1{font-size:clamp(34px,5.6vw,48px)}
+  .hero .lead{max-width:34em}
+}
+@media (max-width:760px){
   .hero-inner{padding:32px 20px 56px}
   .hero-kicker{font-size:14px}
   .hero h1{font-size:clamp(30px,9vw,40px);margin:12px 0 16px}
@@ -178,10 +190,13 @@ layout: null
   <!-- ============ 0. HERO：LINE登録（主CTA） ============ -->
   <section class="hero">
     <div class="hero-media">
-      <picture>
-        <source type="image/webp" srcset="{{ '/assets/img/hero-drone.webp' | relative_url }}">
-        <img src="{{ '/assets/img/hero-drone.jpg' | relative_url }}" alt="白い背景の中で、正面を向いて浮かぶダークグレーのドローン" width="1364" height="944" fetchpriority="high">
-      </picture>
+      <video muted loop playsinline preload="metadata" poster="{{ '/assets/img/hero-sea-poster.jpg' | relative_url }}" width="1280" height="720" aria-hidden="true">
+        <source src="{{ '/assets/video/hero-sea.mp4' | relative_url }}" type="video/mp4">
+      </video>
+      <button type="button" class="hero-pause" aria-label="背景の動画を一時停止" hidden>
+        <svg class="i-pause" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+        <svg class="i-play" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg>
+      </button>
     </div>
     <div class="hero-inner">
       <div class="hero-card">
@@ -457,6 +472,22 @@ layout: null
   sync();
   window.addEventListener('scroll',sync,{passive:true});
   window.addEventListener('resize',sync);
+})();
+(function(){
+  var v=document.querySelector('.hero-media video'),b=document.querySelector('.hero-pause');
+  if(!v||!b)return;
+  function show(playing){
+    b.classList.toggle('paused',!playing);
+    b.setAttribute('aria-label',playing?'背景の動画を一時停止':'背景の動画を再生');
+  }
+  v.addEventListener('play',function(){show(true)});
+  v.addEventListener('pause',function(){show(false)});
+  b.addEventListener('click',function(){if(v.paused){v.play()}else{v.pause()}});
+  show(false);
+  b.hidden=false;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var save=navigator.connection&&navigator.connection.saveData;
+  if(!reduce&&!save){var p=v.play();if(p&&p.catch)p.catch(function(){})}
 })();
 </script>
 
