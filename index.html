@@ -23,23 +23,19 @@ layout: null
 <style>
 /* ===== LP専用スタイル（共通は assets/css/base.css） ===== */
 
-/* ---- hero：左に黒の太字、右半分に空撮の動画（海と島） ---- */
-.hero{position:relative;min-height:min(78svh,740px);display:flex;align-items:center;overflow:hidden;background:#FEFEFE;color:#000;border-bottom:1px solid var(--rule)}
-.hero-media{position:absolute;z-index:3;top:0;bottom:0;left:50%;right:0;background:#0A5BA6}
-.hero-media video{width:100%;height:100%;object-fit:cover;object-position:4% 50%;display:block}
-.hero-pause{position:absolute;right:16px;bottom:16px;display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:#000;cursor:pointer}
-.hero-pause[hidden]{display:none}
-.hero-pause .i-play,.hero-pause.paused .i-pause{display:none}
-.hero-pause.paused .i-play{display:block}
-.hero-pause:focus-visible{outline:2px solid #000;outline-offset:2px}
+/* ---- hero：空撮の動画（海と島）を全面に敷き、左に白の太字（左側を海の紺で暗くして読ませる） ---- */
+.hero{position:relative;min-height:min(78svh,740px);display:flex;align-items:center;overflow:hidden;background:#0A5BA6;color:#fff}
+.hero-media{position:absolute;inset:0}
+.hero-media video{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,30,58,.82) 0%,rgba(4,30,58,.76) 35%,rgba(4,30,58,.64) 52%,rgba(4,30,58,.42) 66%,rgba(4,30,58,.2) 82%,rgba(4,30,58,.06) 100%)}
 .hero-inner{position:relative;z-index:2;width:100%;max-width:var(--wrap);margin:0 auto;padding:96px 32px}
-.hero-card{max-width:min(600px,calc(50% - 48px))}
-.hero-kicker{font-weight:700;font-size:16px;letter-spacing:.04em;color:var(--ink-2)}
-.hero h1{font-size:clamp(36px,4vw,54px);line-height:1.28;letter-spacing:.01em;margin:18px 0 24px}
-.hero .lead{font-size:17px;font-weight:700;line-height:2;max-width:30em;color:#222}
+.hero-card{max-width:600px}
+.hero-kicker{font-weight:700;font-size:16px;letter-spacing:.04em;color:#fff}
+.hero h1{font-size:clamp(38px,5.6vw,66px);line-height:1.28;letter-spacing:.01em;margin:18px 0 24px;text-shadow:0 2px 24px rgba(4,30,58,.35)}
+.hero .lead{font-size:17px;font-weight:700;line-height:2;max-width:30em;color:#fff}
 .hero-offer{display:flex;align-items:center;gap:12px;margin:28px 0 30px;font-size:15px;font-weight:700}
 .hero-offer svg{flex:none;color:var(--signal)}
-.hero-offer small{display:block;font-size:12.5px;font-weight:500;color:var(--ink-2);margin-top:2px}
+.hero-offer small{display:block;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.9);margin-top:2px}
 .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
 .hero-card>*{animation:rise .9s cubic-bezier(.2,.7,.3,1) backwards}
 .hero-card>*:nth-child(2){animation-delay:.08s}
@@ -47,19 +43,17 @@ layout: null
 .hero-card>*:nth-child(4){animation-delay:.24s}
 .hero-card>*:nth-child(5){animation-delay:.32s}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}}
-@media (max-width:1180px) and (min-width:761px){.hero-card{max-width:calc(50% - 32px)}.hero h1{font-size:clamp(30px,4.2vw,50px)}.hero .lead{max-width:22em}}
-@media (max-width:900px){
-  .hero{display:block;min-height:0;background:#fff}
-  .hero-media{position:relative;left:auto;right:auto;z-index:auto;width:100%;aspect-ratio:16/9}
-  .hero-media video{object-position:50% 50%}
-  .hero-pause{right:12px;bottom:12px}
-  .hero-inner{padding:44px 32px 64px}
-  .hero-card{max-width:none}
-  .hero h1{font-size:clamp(34px,5.6vw,48px)}
-  .hero .lead{max-width:34em}
+@media (max-width:1180px) and (min-width:761px){
+  .hero-media::after{background:linear-gradient(90deg,rgba(4,30,58,.82) 0%,rgba(4,30,58,.76) 45%,rgba(4,30,58,.6) 65%,rgba(4,30,58,.36) 85%,rgba(4,30,58,.2) 100%)}
+  .hero-card{max-width:500px}
+  .hero h1{font-size:clamp(34px,4.6vw,52px)}
+  .hero .lead{max-width:22em}
 }
 @media (max-width:760px){
-  .hero-inner{padding:32px 20px 56px}
+  .hero{min-height:min(82svh,720px)}
+  .hero-media video{object-position:22% 50%}
+  .hero-media::after{background:linear-gradient(180deg,rgba(4,30,58,.6) 0%,rgba(4,30,58,.72) 45%,rgba(4,30,58,.8) 100%)}
+  .hero-inner{padding:48px 20px 56px}
   .hero-kicker{font-size:14px}
   .hero h1{font-size:clamp(30px,9vw,40px);margin:12px 0 16px}
   .hero .lead{font-size:15px;line-height:1.9}
@@ -193,10 +187,6 @@ layout: null
       <video muted loop playsinline preload="metadata" poster="{{ '/assets/img/hero-sea-poster.jpg' | relative_url }}" width="1280" height="720" aria-hidden="true">
         <source src="{{ '/assets/video/hero-sea.mp4' | relative_url }}" type="video/mp4">
       </video>
-      <button type="button" class="hero-pause" aria-label="背景の動画を一時停止" hidden>
-        <svg class="i-pause" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
-        <svg class="i-play" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg>
-      </button>
     </div>
     <div class="hero-inner">
       <div class="hero-card">
@@ -474,17 +464,8 @@ layout: null
   window.addEventListener('resize',sync);
 })();
 (function(){
-  var v=document.querySelector('.hero-media video'),b=document.querySelector('.hero-pause');
-  if(!v||!b)return;
-  function show(playing){
-    b.classList.toggle('paused',!playing);
-    b.setAttribute('aria-label',playing?'背景の動画を一時停止':'背景の動画を再生');
-  }
-  v.addEventListener('play',function(){show(true)});
-  v.addEventListener('pause',function(){show(false)});
-  b.addEventListener('click',function(){if(v.paused){v.play()}else{v.pause()}});
-  show(false);
-  b.hidden=false;
+  var v=document.querySelector('.hero-media video');
+  if(!v)return;
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var save=navigator.connection&&navigator.connection.saveData;
   if(!reduce&&!save){var p=v.play();if(p&&p.catch)p.catch(function(){})}
