@@ -14,14 +14,14 @@
   text: 友だち追加で特典PDF3点。制度が変わったときなどのお知らせも届きます。
 
 - name: X
-  url: ""
-  handle: ""
-  text: 制度改正や規制のニュースを、いちばん早くお知らせします。
+  url: "https://x.com/drone_f_club"
+  handle: "@drone_f_club"
+  text: 平日を中心に、初心者のつまずきや用語、週末に飛ばすときのコツを短く発信しています。
 
 - name: Instagram
-  url: ""
-  handle: ""
-  text: 空撮写真と短い動画。撮影地のルールもあわせて紹介します。
+  url: "https://www.instagram.com/drone_friendclub/"
+  handle: "@drone_friendclub"
+  text: 初心者向けのポイントを、見返しやすい画像にまとめて投稿しています。
 
 - name: YouTube
   url: ""
