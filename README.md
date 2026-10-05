@@ -22,6 +22,7 @@ GitHub Pages で配信します（Settings → Pages → Branch: `main` / `root`
 | `_includes/` | 共通パーツ（ヘッダー、フッター、記事カード、LINE誘導ボックス） |
 | `assets/css/base.css` | LPとコラムで共通のスタイル（配色トークン・ボタン・ヘッダー・フッター） |
 | `assets/css/column.css` | コラム用スタイル（カード・記事本文） |
+| `assets/js/motion.js` | サイト全体のモーション（太い黒線・見出し・数字）。見た目は `base.css` の「モーション」 |
 | `assets/img/columns/` | 記事で使う画像の置き場所 |
 | `_data/sns.yml` | **SNSアカウント**の一覧 |
 | `_data/room_items.yml` | **楽天ROOMで紹介するアイテム**の一覧 |
