@@ -38,3 +38,10 @@
 - SNSシェア用画像: `assets/img/og-default.png`（1200×630。トップと、画像のないコラム・各ページで使用）
 - トップの動画: `assets/video/hero-sea.mp4`（空撮の海と島。1280×720・約20秒・音声なし・約1.7MB。元データはGoogleドライブの約5.2MBの動画を ffmpeg〔H.264・CRF30〕で圧縮）。再生前と自動再生しないときは `assets/img/hero-sea-poster.jpg`（動画の最初のフレーム）を表示
 - ロゴ書き出し: `D:\Claude\logo-export\`（リポジトリ外）
+
+## コラムのトップ絵（2026-10-05 ユーザー決定）
+- テイストは note公式（note.com/info）のような「単色の背景＋太字のタイトル＋シンプルなアイコン」。写真やAIの人物画像は使わない（AIの写真は手やプロペラの形が崩れるため）
+- 型は `_thumbs/chiriin-map-airspace.html`（`_thumbs/` は公開されない）。コピーして、ラベル（カテゴリ）・タイトル・補足の一文・白い丸のアイコン（記事の内容に合わせる）を差し替える
+- 背景はオレンジ `#FF4F00`、文字は黒の極太。ドローンのアイコンはサイトのロゴと同じ図形を使う
+- 大きさは1200×675（16:9）のPNG。`assets/img/columns/記事のファイル名.png` に置き、記事の front matter に `image` と `image_alt` を書く（記事の見出しの下・コラム一覧・SNSシェア画像に使われる）
+- 書き出しはヘッドレスEdge：`msedge --headless=new --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,675 --virtual-time-budget=6000 --screenshot=出力.png file:///…/_thumbs/記事.html`。タイトルとアイコンが重ならないか画像で確認する

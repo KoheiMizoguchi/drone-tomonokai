@@ -24,6 +24,7 @@ GitHub Pages で配信します（Settings → Pages → Branch: `main` / `root`
 | `assets/css/column.css` | コラム用スタイル（カード・記事本文） |
 | `assets/js/motion.js` | サイト全体のモーション（太い黒線・見出し・数字）。見た目は `base.css` の「モーション」 |
 | `assets/img/columns/` | 記事で使う画像の置き場所 |
+| `_thumbs/` | コラムのトップ絵の元になるHTML（公開されない）。作り方は CLAUDE.md の「コラムのトップ絵」 |
 | `_data/sns.yml` | **SNSアカウント**の一覧 |
 | `_data/room_items.yml` | **楽天ROOMで紹介するアイテム**の一覧 |
 | `items/index.html` | おすすめアイテムページ（`/items/`） |
