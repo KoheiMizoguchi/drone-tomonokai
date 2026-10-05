@@ -36,4 +36,5 @@
 
 ## 画像
 - SNSシェア用画像: `assets/img/og-default.png`（1200×630。トップと、画像のないコラム・各ページで使用）
-- トップの動画: `assets/video/hero-sea.mp4`（空撮の海と島。1280×720・約20秒・音声なし・約5.2MB。元データはGoogleドライブ）。再生前と自動再生しないときは `assets/img/hero-sea-poster.jpg`（動画の最初のフレーム）を表示- ロゴ書き出し: `D:\Claude\logo-export\`（リポジトリ外）
+- トップの動画: `assets/video/hero-sea.mp4`（空撮の海と島。1280×720・約20秒・音声なし・約1.7MB。元データはGoogleドライブの約5.2MBの動画を ffmpeg〔H.264・CRF30〕で圧縮）。再生前と自動再生しないときは `assets/img/hero-sea-poster.jpg`（動画の最初のフレーム）を表示
+- ロゴ書き出し: `D:\Claude\logo-export\`（リポジトリ外）
