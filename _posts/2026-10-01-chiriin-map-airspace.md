@@ -2,7 +2,7 @@
 title: 地理院地図で、飛行禁止空域を調べる方法
 description: 空港の周辺と人口集中地区（DID）は、国土地理院の「地理院地図」で無料で確認できます。表示のしかた、色の見方、地図では分からないことまでまとめました。
 category: 制度・ルール
-last_modified_at: 2026-10-05
+last_modified_at: 2026-10-06
 image: /assets/img/columns/chiriin-map-airspace.png
 image_alt: オレンジの背景に「地理院地図で、飛行禁止空域を調べる方法」の文字と、ドローン・地図のピン・飛行機・スマホのアイコン
 ---
@@ -30,9 +30,15 @@ image_alt: オレンジの背景に「地理院地図で、飛行禁止空域を
 4. **空港などの周辺空域を表示する**：「各種空域情報（国土交通省航空局）」→「空港等の周辺空域」を選びます。留意事項が表示されるので、読んでから「OK」を押します。
 5. **飛ばしたい場所を探す**：画面上部の検索窓に住所や地名を入れ、候補を選ぶと、その場所に移動します。
 
+<figure><img src="{{ '/assets/img/columns/chiriin-map-menu.jpg' | relative_url }}" alt="地理院地図の「地図の種類」で、その他から他機関の情報へ進んだ画面。左下の選択中の地図に、空港等の周辺空域と人口集中地区 令和2年が並んでいる" width="960" height="744" loading="lazy"><figcaption>「地図」→「その他」→「他機関の情報」と進んだところ。表示中の情報は、左下の「選択中の地図」に並ぶ（出典：<a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener">国土地理院ウェブサイト（地理院地図）</a>）</figcaption></figure>
+
+<figure><img src="{{ '/assets/img/columns/chiriin-map-notice.jpg' | relative_url }}" alt="空港等の周辺空域を選ぶと表示される留意事項の画面" width="340" height="410" loading="lazy" style="max-width:340px;margin:0 auto"><figcaption>空港等の周辺空域を選ぶと出る「留意事項」（出典：<a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener">国土地理院ウェブサイト（地理院地図）</a>）</figcaption></figure>
+
 > 手順2〜4を省きたいときは、2つの情報を表示した状態で開く[このリンク](https://maps.gsi.go.jp/#12/35.681236/139.767125/&base=std&ls=std%7Cdid2020%7Ckokuarea)が便利です（東京駅付近が表示されます。そこから検索で移動してください）。
 
 ## 色の見方
+
+<figure><img src="{{ '/assets/img/columns/chiriin-map-layers.jpg' | relative_url }}" alt="東京都心から羽田空港付近の地理院地図。人口集中地区が赤、空港等の周辺空域が緑と紫で表示されている" width="1200" height="569" loading="lazy"><figcaption>東京都心から羽田空港の付近。赤が人口集中地区、緑と紫が空港等の周辺空域（出典：<a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener">国土地理院ウェブサイト（地理院地図）</a>。人口集中地区は総務省統計局、空港等の周辺空域は国土交通省航空局の情報）</figcaption></figure>
 
 | 色 | 意味 |
 |---|---|
