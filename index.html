@@ -346,7 +346,7 @@ layout: null
     </div>
   </section>
 
-  <!-- ============ 3. COLUMNS：最新コラム3件（①情報／記事0件なら非表示） ============ -->
+  <!-- ============ 3. COLUMNS：最新コラム7件まで（①情報／記事0件なら非表示） ============ -->
   {% if site.posts.size > 0 %}
   <section class="sec" id="columns">
     <div class="wrap">
@@ -355,7 +355,7 @@ layout: null
         <h2>もう一歩、<wbr>詳しく<wbr>知りたい<wbr>ときは。</h2>
         <p>制度の<wbr>背景や<wbr>機体選び、<wbr>練習の<wbr>コツまで。<wbr>ドローン友の会が<wbr>まとめた<wbr>読みものです。</p>
       </div>
-      {% assign latest = site.posts | slice: 0, 3 %}
+      {% assign latest = site.posts | slice: 0, 7 %}
       {% include column-cards.html posts=latest %}
       <div class="col-more"><a class="btn-ghost" href="{{ '/columns/' | relative_url }}">コラムを<wbr>すべて<wbr>見る</a></div>
     </div>
