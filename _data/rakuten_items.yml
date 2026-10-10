@@ -41,3 +41,27 @@
   category: バッテリーの持ち運び
   comment: ラジコン用のバッテリーを入れて持ち運ぶ・保管するための袋です。入れる前に、自分のバッテリーが中に収まる大きさかを確かめます。
   checked: 2026-10-10
+
+- id: peg-elizze-18
+  name: 村の鍛冶屋 鍛造ペグ エリッゼステーク 18cm（6本）
+  url: https://item.rakuten.co.jp/yminfo/10020521/
+  image: https://thumbnail.image.rakuten.co.jp/@0_mall/yminfo/cabinet/muranokajia/mk-1806.jpg?_ex=300x300
+  category: ペグ
+  comment: 長さ18cmの鍛造ペグ。断面が楕円なので地面の中で回りにくく、ランディングパッドをしっかり留められます。打ち込みは手持ちの金づちでもできます。
+  checked: 2026-10-10
+
+- id: trunk-cargo
+  name: RISU トランクカーゴ スタッキングタイプ（20L〜70L）
+  url: https://item.rakuten.co.jp/risu-proshop/17561-2/
+  image: https://thumbnail.image.rakuten.co.jp/@0_mall/risu-proshop/cabinet/images/trunk/17561-2-01se-pro.jpg?_ex=300x300
+  category: 道具を入れるボックス
+  comment: フタ付きの丈夫なプラスチック製ボックスで、耐荷重は100kg。20Lから70Lまで大きさを選べます。機体の収納ケースやバッテリー、ランディングパッドが入るか、寸法を確かめて選びます。
+  checked: 2026-10-10
+
+- id: jackery-240
+  name: Jackery ポータブル電源 240 New（256Wh・定格300W）
+  url: https://item.rakuten.co.jp/jackery-japan/n-p-240200-bkor-jk2/
+  image: https://thumbnail.image.rakuten.co.jp/@0_mall/jackery-japan/cabinet/13805583/imgrc0119193061.jpg?_ex=300x300
+  category: ポータブル電源
+  comment: 容量256Wh、定格出力300Wのコンパクトな機種です。使う充電器の消費電力（W）が300W以内か、取扱説明書で確かめてから選びます。
+  checked: 2026-10-10
