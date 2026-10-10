@@ -32,6 +32,8 @@
   color:#000;background:#fff;border:1px solid var(--rule-2);transition:border-color .15s ease;
 }
 .sns-links-row a:hover{border-color:#000}
+.sns-links-row a.sns-links-room{width:auto;gap:7px;padding:0 8px 0 14px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none}
+.sns-links-room .pr-label{margin-left:3px;padding:3px 6px;font-size:10px}
 .sns-links.boxed{
   margin-top:28px;padding:18px 22px;justify-content:space-between;
   border-radius:var(--r);background:var(--paper-2);
