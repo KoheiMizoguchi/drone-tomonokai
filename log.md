@@ -1,5 +1,20 @@
 # 作業ログ
 
+## 2026-10-10 コラム記事下部の楽天ROOMをSNS欄にまとめた
+
+**変更ファイル**
+- `_layouts/column.html`
+- `_includes/sns-links.html`
+- `assets/css/sns.css`
+
+**概要**
+- コラム記事の最後にあった楽天ROOMの大きな案内ボックス（room-banner）を外し、「SNSでも発信中」の欄の最後に「楽天ROOM」のボタン（PR表記・`rel="sponsored"` つき）を並べた
+- `sns-links.html` に `room=true` の指定を追加（`rakuten_room_url` が空なら出さない）
+
+**備考**
+- `room-banner.html` は「おすすめアイテム」ページ（items/index.html）で引き続き使用
+- パソコン幅（1280px）・スマホ幅（500px）のスクリーンショットで表示を確認
+
 ## 2026-10-10 コラム2本の並び順を入れ替え
 
 **変更ファイル**

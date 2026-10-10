@@ -1,5 +1,6 @@
-{%- comment -%} SNSアイコンの横並び（フッター・コラム記事の最後で使用）。include.label … 左に出す見出し {%- endcomment -%}
+{%- comment -%} SNSアイコンの横並び（コラム記事の最後で使用）。include.label … 左に出す見出し／include.room … true で最後に楽天ROOM（広告・PR表記つき）を並べる（rakuten_room_url が空なら出さない） {%- endcomment -%}
 {%- include sns-count.html -%}
+{%- assign roomlen = site.rakuten_room_url | size -%}
 {%- if sns_count > 0 %}
 <div class="sns-links{% if include.boxed %} boxed{% endif %}">
   {%- if include.label %}<span class="sns-links-h">{{ include.label }}</span>{% endif %}
@@ -11,6 +12,9 @@
     <a href="{{ u }}" target="_blank" rel="noopener me" aria-label="{{ a.name }}" title="{{ a.name }}" data-sns="{{ a.name | downcase }}">{% include sns-icon.html name=a.name size=19 %}</a>
     {%- endif %}
     {%- endfor %}
+    {%- if include.room and roomlen > 0 %}
+    <a class="sns-links-room" href="{{ site.rakuten_room_url }}" target="_blank" rel="sponsored noopener" data-room="profile">{% include sns-icon.html name="room" size=18 %}楽天ROOM<span class="pr-label">PR</span></a>
+    {%- endif %}
   </span>
 </div>
 {%- endif %}
