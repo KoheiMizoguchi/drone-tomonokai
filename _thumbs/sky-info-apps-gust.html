@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=block">
+<style>
+html,body{margin:0}
+.c{position:relative;width:1200px;height:675px;overflow:hidden;background:#FFF3EC;font-family:"Zen Kaku Gothic New",sans-serif;color:#000}
+.ttl{position:absolute;left:56px;top:44px;font-weight:900;font-size:44px;letter-spacing:.02em}
+.ttl::before{content:"";display:block;width:56px;height:6px;background:#FF4F00;margin-bottom:18px}
+.note{position:absolute;right:48px;bottom:26px;font-weight:700;font-size:25px;color:#444}
+svg text{font-family:"Zen Kaku Gothic New",sans-serif}
+</style></head><body>
+<div class="c">
+  <div class="ttl">平均が弱くても、突風は強いことがある</div>
+  <svg width="1200" height="675" style="position:absolute;inset:0">
+    <line x1="150" y1="590" x2="1130" y2="590" stroke="#000" stroke-width="3"/>
+    <line x1="150" y1="590" x2="150" y2="205" stroke="#000" stroke-width="3"/>
+    <text x="136" y="598" text-anchor="end" font-size="26" font-weight="700">0</text>
+    <text x="136" y="543" text-anchor="end" font-size="26" font-weight="700">1</text>
+    <text x="136" y="488" text-anchor="end" font-size="26" font-weight="700">2</text>
+    <text x="136" y="433" text-anchor="end" font-size="26" font-weight="700">3</text>
+    <text x="136" y="378" text-anchor="end" font-size="26" font-weight="700">4</text>
+    <text x="136" y="323" text-anchor="end" font-size="26" font-weight="700">5</text>
+    <text x="136" y="268" text-anchor="end" font-size="26" font-weight="700">6</text>
+    <text x="136" y="213" text-anchor="end" font-size="26" font-weight="700">7</text>
+    <text x="136" y="175" text-anchor="end" font-size="26" font-weight="700">m/s</text>
+    <text x="1130" y="630" text-anchor="end" font-size="26" font-weight="700">時間（10分間）→</text>
+    <line x1="150" y1="315" x2="1130" y2="315" stroke="#FF4F00" stroke-width="4"/>
+    <text x="1130" y="299" text-anchor="end" font-size="28" font-weight="900" fill="#C73C00">5m/s（標準マニュアルの目安）</text>
+    <path d="M150 425 L183 447 L215 403 L248 436 L281 376 L313 458 L346 420 L379 282 L411 408 L444 442 L477 469 L509 398 L542 430 L575 381 L607 452 L640 425 L673 249 L705 392 L738 447 L771 414 L803 464 L836 403 L869 354 L901 430 L934 420 L967 458 L999 436 L1032 392 L1065 442 L1097 425 L1130 414" fill="none" stroke="#000" stroke-width="3.5" stroke-linejoin="round"/>
+    <line x1="150" y1="419.5" x2="1130" y2="419.5" stroke="#555" stroke-width="3" stroke-dasharray="10 9"/>
+    <text x="164" y="539.5" font-size="28" font-weight="900" fill="#333">点線：平均 約3m/s</text>
+    <circle cx="379" cy="282" r="11" fill="#FF4F00"/>
+    <text x="379" y="258" text-anchor="middle" font-size="30" font-weight="900">突風</text>
+    <circle cx="673" cy="249" r="11" fill="#FF4F00"/>
+    <text x="673" y="225" text-anchor="middle" font-size="30" font-weight="900">突風</text>
+  </svg>
+  <div class="note" style="top:120px;bottom:auto">※イメージ。数値は説明のための例</div>
+</div></body></html>

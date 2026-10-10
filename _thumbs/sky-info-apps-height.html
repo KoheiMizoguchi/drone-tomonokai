@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=block">
+<style>
+html,body{margin:0}
+.c{position:relative;width:1200px;height:675px;overflow:hidden;background:#FFF3EC;font-family:"Zen Kaku Gothic New",sans-serif;color:#000}
+.ttl{position:absolute;left:56px;top:44px;font-weight:900;font-size:44px;letter-spacing:.02em}
+.ttl::before{content:"";display:block;width:56px;height:6px;background:#FF4F00;margin-bottom:18px}
+.note{position:absolute;right:48px;bottom:26px;font-weight:700;font-size:25px;color:#444}
+svg text{font-family:"Zen Kaku Gothic New",sans-serif}
+</style></head><body>
+<div class="c">
+  <div class="ttl">上空ほど、風は強くなりやすい</div>
+  <svg width="1200" height="675" style="position:absolute;inset:0">
+    <line x1="250" y1="160" x2="250" y2="610" stroke="#000" stroke-width="3"/>
+    <line x1="120" y1="610" x2="1150" y2="610" stroke="#000" stroke-width="4"/>
+    <line x1="250" y1="190" x2="1150" y2="190" stroke="#000" stroke-width="2" stroke-dasharray="8 10"/>
+    <text x="232" y="199" text-anchor="end" font-size="32" font-weight="900">150m</text>
+    <text x="1150" y="172" text-anchor="end" font-size="27" font-weight="700" fill="#444">150m以上の高さで飛ばすには、許可が必要</text>
+    <text x="232" y="584" text-anchor="end" font-size="32" font-weight="900">地上</text>
+    <g stroke="#FF4F00" stroke-width="6" stroke-linecap="round" fill="none"><path d="M560 575H720"/><path d="M698 559L720 575L698 591"/></g>
+    <text x="560" y="547" font-size="28" font-weight="700" fill="#444">Windyの「表面」</text>
+    <line x1="242" y1="445" x2="258" y2="445" stroke="#000" stroke-width="3"/>
+    <text x="232" y="454" text-anchor="end" font-size="32" font-weight="900">50m</text>
+    <g stroke="#FF4F00" stroke-width="8" stroke-linecap="round" fill="none"><path d="M560 445H860"/><path d="M838 429L860 445L838 461"/></g>
+    <line x1="242" y1="300" x2="258" y2="300" stroke="#000" stroke-width="3"/>
+    <text x="232" y="309" text-anchor="end" font-size="32" font-weight="900">100m</text>
+    <g stroke="#FF4F00" stroke-width="10" stroke-linecap="round" fill="none"><path d="M560 300H1010"/><path d="M988 284L1010 300L988 316"/></g>
+    <text x="560" y="272" font-size="28" font-weight="700" fill="#444">Windyの「100m」</text>
+    <svg x="380" y="262" width="76" height="76" viewBox="0 0 32 32"><circle cx="9" cy="9" r="4.2" fill="none" stroke="#FF4F00" stroke-width="2.4"/><circle cx="23" cy="9" r="4.2" fill="none" stroke="#FF4F00" stroke-width="2.4"/><circle cx="9" cy="23" r="4.2" fill="none" stroke="#000" stroke-width="2.4"/><circle cx="23" cy="23" r="4.2" fill="none" stroke="#000" stroke-width="2.4"/><rect x="12.5" y="12.5" width="7" height="7" rx="2" fill="#000"/></svg>
+    <g fill="#000"><circle cx="400" cy="540" r="11"/><path d="M386 556h28l-4 54h-20z"/></g>
+    <g fill="#2E7D4F"><path d="M300 610l22-70 22 70z"/></g>
+    <text x="1150" y="365" text-anchor="end" font-size="28" font-weight="900" fill="#C73C00">風に流されて戻れなくなるのは、たいてい上空</text>
+  </svg>
+  <div class="note">※イメージ。実際の風は日や場所によって変わる</div>
+</div></body></html>
