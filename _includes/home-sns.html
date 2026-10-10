@@ -1,12 +1,13 @@
-{%- comment -%} LPの最後のSNS欄（④SNS）。LINE以外のSNSにURLが入るまで何も出さない。1行＝1SNSの罫線リスト {%- endcomment -%}
+{%- comment -%} LPの最後のSNS欄（④SNS）。LINE以外のSNSにURLが入るまで何も出さない。1行＝1SNSの罫線リスト。最後の行に楽天ROOM（広告）を並べる（_config.yml の rakuten_room_url が空なら出さない） {%- endcomment -%}
 {%- include sns-count.html -%}
+{%- assign roomlen = site.rakuten_room_url | size -%}
 {%- if sns_count > 0 %}
   <section class="sec" id="sns">
     <div class="wrap">
       <div class="sec-head">
         <span class="tag">Follow us</span>
         <h2>SNSでも、<wbr>発信しています。</h2>
-        <p>見たい<wbr>形で、<wbr>フォローしてください。</p>
+        <p>見たい<wbr>形で、<wbr>フォローしてください。{% if roomlen > 0 %}<wbr>機体のほかに<wbr>そろえておきたい<wbr>道具は、<wbr>楽天ROOMで<wbr>紹介しています（PR）。{% endif %}</p>
       </div>
       <ul class="sns-list">
         {%- for a in site.data.sns %}
@@ -23,6 +24,16 @@
         </li>
         {%- endif %}
         {%- endfor %}
+        {%- if roomlen > 0 %}
+        <li>
+          <a class="sns-row" href="{{ site.rakuten_room_url }}" target="_blank" rel="sponsored noopener" data-room="profile">
+            <span class="sns-ico">{% include sns-icon.html name="room" size=24 %}</span>
+            <span class="sns-name">楽天ROOM<small>PR（広告）</small></span>
+            <span class="sns-desc">機体・バッテリー・練習用品など、初心者に役立つ道具をまとめています。</span>
+            <span class="sns-go">見る</span>
+          </a>
+        </li>
+        {%- endif %}
       </ul>
     </div>
   </section>
