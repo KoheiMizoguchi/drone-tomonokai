@@ -1,0 +1,43 @@
+# ▼ 楽天アフィリエイトで紹介する商品の一覧 ▼
+# 記事の本文中に次の1行を書くと、その位置に商品カード（PR表記つき）が出ます。
+#   {% include rakuten-item.html id="wind-meter" %}
+#
+#   id        … 英数字とハイフンの識別名（重複不可）
+#   name      … 商品名（短く分かりやすく）
+#   url       … 楽天市場の商品ページのURL（item.rakuten.co.jp で始まるもの）。アフィリエイトのリンクは自動で作られます
+#   image     … 商品画像のURL（thumbnail.image.rakuten.co.jp の形。任意）
+#   category  … 分類（カードの上に小さく出る）
+#   comment   … 紹介の理由（1〜2文）。使っていない商品は、使った感想のように書かない
+#   checked   … 商品ページの内容を確認した日
+
+- id: wind-meter
+  name: FieldNew デジタル風速計 FN027A
+  url: https://item.rakuten.co.jp/fieldnew-store/fn027/
+  image: https://thumbnail.image.rakuten.co.jp/@0_mall/fieldnew-store/cabinet/10512200/12816074/fn027a_1.jpg?_ex=300x300
+  category: 風速計
+  comment: 手のひらサイズの電池式で、日本語の説明書と180日保証つき。現在の風速に加えて、最大・平均も表示できます。防水ではないので、雨の日の持ち出しには注意します。
+  checked: 2026-10-10
+
+- id: landing-pad-75
+  name: KYOMOTO ランディングパッド 75cm
+  url: https://item.rakuten.co.jp/kyougenn/landingmat75/
+  image: https://thumbnail.image.rakuten.co.jp/@0_mall/kyougenn/cabinet/07325335/07760367/dronepad75_cart.jpg?_ex=300x300
+  category: ランディングパッド
+  comment: 直径75cm・約300gの折りたたみ式で、風で飛ばないように固定するペグが付いています。同じシリーズに55cm・90cm・110cmもあります。
+  checked: 2026-10-10
+
+- id: microsd-sandisk-128
+  name: SanDisk Extreme microSDXC 128GB（UHS-I U3・V30）
+  url: https://item.rakuten.co.jp/kazamidori/0619659188467/
+  image: https://thumbnail.image.rakuten.co.jp/@0_mall/kazamidori/cabinet/thum_sd/0619659188467.jpg?_ex=300x300
+  category: microSDカード
+  comment: 動画の記録で目安になる「U3」「V30」に対応した定番のカード（海外パッケージ版）。買う前に、自分の機体が使える容量と規格を取扱説明書で確かめてください。
+  checked: 2026-10-10
+
+- id: lipo-bag
+  name: G-FORCE リポバッグ 大（18×22cm）
+  url: https://item.rakuten.co.jp/hblt/p-hb000084504/
+  image: https://thumbnail.image.rakuten.co.jp/@0_mall/hblt/cabinet/product/p001/h18/p-hb000084504-m-01.jpg?_ex=300x300
+  category: バッテリーの持ち運び
+  comment: ラジコン用のバッテリーを入れて持ち運ぶ・保管するための袋です。入れる前に、自分のバッテリーが中に収まる大きさかを確かめます。
+  checked: 2026-10-10
