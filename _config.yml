@@ -16,6 +16,10 @@ line_url: https://lin.ee/XqapxDi
 # 空のままだと、ROOMへの誘導ボックスとヘッダーの「おすすめ」リンクは表示されません
 rakuten_room_url: "https://room.rakuten.co.jp/room_584cfed81d/items"
 
+# 楽天アフィリエイトID（楽天アフィリエイトの管理画面で確認できるもの）。記事内の商品カード（_data/rakuten_items.yml）のリンクに使われます
+# 空のままだと、商品カードは表示されません
+rakuten_affiliate_id: "1ebce8ca.1fe2f85d.1ebce8cb.79468e10"
+
 # Googleアナリティクスの測定ID（例："G-XXXXXXXXXX"）
 # 空のままだとアナリティクスは読み込まれません。入れるとプライバシーポリシーの記載どおり計測が始まります
 google_analytics_id: "G-VMJ4M4E86T"

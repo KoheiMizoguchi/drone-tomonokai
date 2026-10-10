@@ -27,6 +27,7 @@ GitHub Pages で配信します（Settings → Pages → Branch: `main` / `root`
 | `_thumbs/` | コラムのトップ絵の元になるHTML（公開されない）。作り方は CLAUDE.md の「コラムのトップ絵」 |
 | `_data/sns.yml` | **SNSアカウント**の一覧 |
 | `_data/room_items.yml` | **楽天ROOMで紹介するアイテム**の一覧 |
+| `_data/rakuten_items.yml` | **楽天アフィリエイトで紹介する商品**の一覧（記事内の商品カード。`_includes/rakuten-item.html`） |
 | `items/index.html` | おすすめアイテムページ（`/items/`） |
 | `assets/css/sns.css` | SNSカード・アイコンのスタイル |
 | `assets/css/room.css` | 楽天ROOMの商品カード・誘導ボックスのスタイル |
