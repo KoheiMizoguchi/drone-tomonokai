@@ -5,3 +5,8 @@ Thumbs.db
 
 # 作業ログ（手元だけで管理し、GitHubには上げない）
 log.md
+
+# 運用ルール・説明書・下書き（手元だけで管理し、GitHubには上げない）
+CLAUDE.md
+README.md
+_drafts/
