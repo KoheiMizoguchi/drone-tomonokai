@@ -6,8 +6,8 @@ description: 初心者のためのドローン情報。買ってから飛ばす�
 lang: ja_JP
 timezone: Asia/Tokyo
 
-url: https://koheimizoguchi.github.io
-baseurl: /drone-tomonokai
+url: https://drone-tomonokai.jp
+baseurl: ""
 
 # LINE公式アカウントの友だち追加リンク（コラムページのCTAで使用）
 line_url: https://lin.ee/XqapxDi
