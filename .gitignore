@@ -2,3 +2,6 @@
 ._*
 .AppleDouble
 Thumbs.db
+
+# 作業ログ（手元だけで管理し、GitHubには上げない）
+log.md
