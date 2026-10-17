@@ -24,7 +24,7 @@ lead: ドローン友の会は、ドローン初心者のための情報をま�
 | 運営者名 | ドローン友の会 運営事務局 |
 | 保有資格 | 一等無人航空機操縦士（国家資格）<br>測量士補（国家資格） |
 | サイトURL | {{ site.url }}{{ site.baseurl }}/ |
-| お問い合わせ | [公式LINEのトーク]({{ '/contact/' | relative_url }})で受け付けています |
+| お問い合わせ | <a href="{{ site.line_url }}" target="_blank" rel="noopener" data-cta="about">公式LINEのトーク</a>で受け付けています |
 
 ## このサイトについて
 

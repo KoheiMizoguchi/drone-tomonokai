@@ -83,6 +83,6 @@ Cookieはブラウザの設定で無効にできます。また、[Googleアナ�
 
 ## 12. お問い合わせ窓口
 
-本ポリシーに関するお問い合わせは、[公式LINEのトーク]({{ '/contact/' | relative_url }})で受け付けています。
+本ポリシーに関するお問い合わせは、<a href="{{ site.line_url }}" target="_blank" rel="noopener" data-cta="privacy">公式LINEのトーク</a>で受け付けています。
 
 ドローン友の会 運営事務局
